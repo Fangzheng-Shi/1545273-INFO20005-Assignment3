@@ -1,0 +1,13 @@
+.site-header {
+    background-color: #F2E205;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    .left-side {
+        display: flex;
+    }
+    .right-side {
+        display: flex;
+    }
+}
