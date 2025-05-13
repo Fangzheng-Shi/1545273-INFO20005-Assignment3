@@ -1,79 +1,160 @@
-.site-header {
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height:1.5;
+    color:black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header.site-header {
     background-color: #F2E205;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width:100%;
-    .left-side {
-        display: flex;
-    }
-    .right-side {
-        display: flex;
-    }
+    padding: 0 20px;
+    height: 64px;
+}
+
+.site-header .left-side {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.site-header .logo span {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.site-header .right-side {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-header .search-region {
+    display: flex;
+    align-items: center;
+    background: #FFF;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.search-region img {
+    width: 20px;
+    margin-right: 8px;
+}
+
+.search-region input {
+    border: none;
+    outline: none;
+    width: 200px;
+    font-size: 16px;
+}
+
+.user-btn,
+.cart-region {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.cart-region .cart-count {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: blue;
+    color: #fff;
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .carousel {
     position: relative;
     width: 100%;
-    max-width: 800px;
-    margin: auto;
     overflow: hidden;
 }
 
 .carousel .slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
-    width: 300%;
 }
 
 .carousel .slide {
-    min-width: 100%;
-    box-sizing: border-box;
+    flex: 0 0 100%;
 }
 
-.carousel .slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.carousel .carousel-control {
+button.carousel-control {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 60px;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 20px;
     background: rgba(0,0,0,0.5);
-    border: none;
-    color: white;
-    font-size: 2rem;
+    color: #fff;
     cursor: pointer;
-    padding: 0 10px;
-    z-index: 10;
 }
 
-.carousel .prev {
-    left: 10px;
-}
-.carousel .next {
-    right: 10px;
+button.carousel-control.prev {
+    left: 45%;
 }
 
-.carousel .carousel-indicators {
+button.carousel-control.next {
+    left: 55%;
+    background: #fff;
+    color: #000;
+}
+
+.carousel-indicators {
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 8px;
 }
 
-.carousel .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
+.carousel-indicators .dot {
+    display: inline-block;
+    width: 40px;
+    height: 8px;
+    border-radius: 4px;
+    background: rgba(255,255,255,0.6);
     cursor: pointer;
 }
 
-.carousel .dot.active {
-    background: white;
+.carousel-indicators .dot.active {
+    background: #000;
+}
+  
+@media (max-width: 600px) {
+    header.site-header {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 10px;
+      height: auto;
+    }
+    .site-header .search-region input {
+      display: none;
+    }
+    button.carousel-control {
+      bottom: 40px;
+    }
 }
