@@ -11,3 +11,69 @@
         display: flex;
     }
 }
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%;
+}
+
+.carousel .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel .slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.carousel .carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0 10px;
+    z-index: 10;
+}
+
+.carousel .prev {
+    left: 10px;
+}
+.carousel .next {
+    right: 10px;
+}
+
+.carousel .carousel-indicators {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.carousel .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.carousel .dot.active {
+    background: white;
+}
