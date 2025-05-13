@@ -1,6 +1,5 @@
+/* The carousel part */
 const slides = document.querySelectorAll(".slide");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
 const indicators = document.querySelector(".carousel-indicators");
 let currentIndex = 0;
 let slideInterval;
@@ -43,14 +42,5 @@ function resetInterval() {
     clearInterval(slideInterval);
     slideInterval = setInterval(nextSlide, 3000);
 }
-
-nextBtn.addEventListener("click", () => {
-    nextSlide();
-    resetInterval();
-});
-prevBtn.addEventListener("click", () => {
-    prevSlide();
-    resetInterval();
-});
 
 resetInterval();

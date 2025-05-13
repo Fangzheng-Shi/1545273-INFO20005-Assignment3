@@ -16,13 +16,18 @@ header.site-header {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
-    height: 64px;
+    height: 100px;
+}
+
+.site-header .menu-btn {
+    cursor: pointer;
 }
 
 .site-header .left-side {
     display: flex;
     align-items: center;
     gap: 16px;
+    margin-left: 20px;
 }
 
 .site-header .logo {
@@ -90,6 +95,8 @@ header.site-header {
     position: relative;
     width: 100%;
     overflow: hidden;
+    max-width: 1200px;
+    margin: 30px auto 0;
 }
 
 .carousel .slides {
@@ -101,25 +108,11 @@ header.site-header {
     flex: 0 0 100%;
 }
 
-button.carousel-control {
-    position: absolute;
-    bottom: 60px;
-    padding: 8px 12px;
-    border-radius: 20px;
-    font-size: 20px;
-    background: rgba(0,0,0,0.5);
-    color: #fff;
-    cursor: pointer;
-}
-
-button.carousel-control.prev {
-    left: 45%;
-}
-
-button.carousel-control.next {
-    left: 55%;
-    background: #fff;
-    color: #000;
+.carousel .slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+    display: block;
 }
 
 .carousel-indicators {
@@ -129,6 +122,7 @@ button.carousel-control.next {
     display: flex;
     justify-content: center;
     gap: 8px;
+    margin:0 10px 0;
 }
 
 .carousel-indicators .dot {
