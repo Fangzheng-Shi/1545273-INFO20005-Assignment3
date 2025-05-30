@@ -1,0 +1,267 @@
+/* Style settings for whole body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    color: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header region */ 
+header.site-header {
+    background-color: #F2E205;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100px;
+}
+
+.site-header .menu-btn {
+    cursor: pointer;
+}
+
+.site-header .left-side {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: 20px;
+}
+
+.site-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.site-header .logo-text1,
+.site-header .logo-text2 {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.site-header .logo-text1 {
+    display: inline-block;
+    padding: 4px 8px;
+    border: 3px solid #000;
+    border-radius: 10px;
+}
+
+.site-header .right-side {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-header .search-region,
+.site-header .person-region,
+.site-header .cart-region {
+    margin-top: 12px;
+}
+
+.site-header .search-region {
+    display: flex;
+    align-items: center;
+    background: #FFF;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.search-region img {
+    width: 20px;
+    margin-right: 8px;
+}
+
+.search-region input {
+    border: none;
+    outline: none;
+    width: 200px;
+    font-size: 16px;
+}
+
+.user-btn,
+.cart-region {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+}
+
+.cart-region .cart-count {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #4693E4;
+    color: #fff;
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Title and Filters */
+.title-filters {
+    background: #ffd500;
+    padding: 10px 20px;
+    border-bottom: 2px solid #ccc;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.bar {
+    width: 80px;
+    height: 2px;
+    background: white;
+}
+
+.bar.left {
+    margin-right: 15px;
+}
+
+.bar.right {
+    margin-left: 15px;
+}
+
+.title-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    background: white;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.filter-buttons .button {
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.button-text {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.filter-buttons img {
+    width: 20px;
+}
+
+/* Card Container */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.price {
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.price span {
+    font-size: 12px;
+    color: #333;
+}
+
+.rating {
+    font-size: 14px;
+    color: green;
+    margin-bottom: 5px;
+}
+
+.date {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.stock {
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.stock.green {
+    color: green;
+}
+
+.stock.red {
+    color: red;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+.btn-group {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-group button {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #999;
+    background: white;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.btn-group button:hover {
+    background: #f0f0f0;
+}
+
+/* ===== MEDIA QUERY ===== */
+@media (max-width: 600px) {
+    .right-side {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    #searchBar {
+        width: 100px;
+    }
+
+    .title-text {
+        font-size: 18px;
+    }
+}
