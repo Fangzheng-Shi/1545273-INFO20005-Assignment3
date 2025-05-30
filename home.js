@@ -44,3 +44,7 @@ function resetInterval() {
 }
 
 resetInterval();
+
+function openSideBar() {
+    
+}
