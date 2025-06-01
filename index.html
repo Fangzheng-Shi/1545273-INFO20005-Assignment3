@@ -12,8 +12,9 @@
     <header class="site-header">
         <div class="left-side">
             <div class="menu-btn">
-                <img src="sources/burger-menu-svgrepo-com.svg" class="burger-menu" />
-                <button click="openSideBar">
+                <button onclick="openSideBar()">
+                    <img src="sources/burger-menu-svgrepo-com.svg" id="burger-menu" />
+                </button>
             </div>
             <span class="logo">
                 <span class="logo-text1">OZ</span>
@@ -97,7 +98,27 @@
         </div>
     </div>
 
-    <script src="home.js"></script>
+    <!--The dark overplay setting while sidebar showing-->  
+    <div class="overlay" id="overlay"></div>
+
+    <!--Side bar-->
+    <div class="side-bar-list" id="sidebar">
+        <ul>
+            <li><span class="icon">▶</span> Notification</li>
+            <li><span class="icon">▶</span> About Us</li>
+            <li><span class="icon">▶</span> Log in</li>
+            <li><span class="icon">▶</span> Sign up</li>
+            <li><span class="icon">▶</span> Settings</li>
+            <li><span class="icon">▶</span> Report Problems</li>
+        </ul>
+        <div class="back-btn">
+            <button id="closeSidebar">
+                <img src="sources/forward-circle-fill-svgrepo-com.svg" alt="closeSidebar">
+                Close
+            </button>
+        </div>
+
+        <script src="home.js"></script>
 </body>
 
 </html>

@@ -25,6 +25,15 @@ header.site-header {
     cursor: pointer;
 }
 
+.menu-btn button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    outline: none;
+}
+
 .site-header .left-side {
     display: flex;
     align-items: center;
@@ -250,7 +259,7 @@ header.site-header {
     background: #f0f0f0;
 }
 
-/* ===== MEDIA QUERY ===== */
+/* media query */
 @media (max-width: 600px) {
     .right-side {
         flex-wrap: wrap;

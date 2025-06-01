@@ -1,8 +1,8 @@
 /* Style settings for whole body */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    line-height:1.5;
-    color:black;
+    line-height: 1.5;
+    color: black;
 }
 
 * {
@@ -25,6 +25,16 @@ header.site-header {
     cursor: pointer;
 }
 
+.menu-btn button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+
 .site-header .left-side {
     display: flex;
     align-items: center;
@@ -44,8 +54,9 @@ header.site-header {
     font-weight: bold;
     font-size: 36px;
 }
+
 .site-header .logo-text1 {
-    display: inline-block;      
+    display: inline-block;
     padding: 4px 8px;
     border: 3px solid #000;
     border-radius: 10px;
@@ -128,7 +139,7 @@ header.site-header {
 .carousel .slide img {
     width: 100%;
     height: auto;
-    object-fit: cover; 
+    object-fit: cover;
     display: block;
 }
 
@@ -139,7 +150,7 @@ header.site-header {
     display: flex;
     justify-content: center;
     gap: 8px;
-    margin:0 10px 0;
+    margin: 0 10px 0;
 }
 
 .carousel-indicators .dot {
@@ -147,57 +158,59 @@ header.site-header {
     width: 40px;
     height: 8px;
     border-radius: 4px;
-    background: rgba(255,255,255,0.6);
+    background: rgba(255, 255, 255, 0.6);
     cursor: pointer;
 }
 
 .carousel-indicators .dot.active {
     background: #000;
 }
-  
+
 @media (max-width: 600px) {
     header.site-header {
-      flex-direction: column;
-      align-items: stretch;
-      padding: 10px;
-      height: auto;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px;
+        height: auto;
     }
+
     .site-header .search-region input {
-      display: none;
+        display: none;
     }
+
     button.carousel-control {
-      bottom: 40px;
+        bottom: 40px;
     }
 }
 
 /* Four button sections */
 .main-sections {
-    display: flex;                
+    display: flex;
     justify-content: center;
     gap: 20px;
     margin: 20px auto 20px;
     max-width: 1200px;
 }
-  
+
 .main-sections .section {
-    flex: 1;  
-    display: flex;                
-    align-items: center; 
-    justify-content: center; 
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-height: 80px;
-    padding: 0 15px; 
+    padding: 0 15px;
     background-color: #F2622E;
-    color: #FFF;                  
-    border-radius: 4px;           
-    font-weight: bold;            
-    font-size: 16px;              
+    color: #FFF;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 16px;
     text-decoration: none;
-    cursor: pointer;              
+    cursor: pointer;
 }
-  
+
 .main-sections .section img {
-    width: 24px;                  
-    height: auto;                 
+    width: 24px;
+    height: auto;
     margin-right: 10px;
     margin-top: 5px;
 }
@@ -208,13 +221,13 @@ header.site-header {
 
 /* The new-deals region */
 .new-deals-region {
-    background: 
-    linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
-    url('sources/back1.png') center center / cover no-repeat ;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+        url('sources/back1.png') center center / cover no-repeat;
     padding: 80px 0;
     position: relative;
 }
-  
+
 .new-deals-region .top-title {
     display: flex;
     align-items: center;
@@ -225,18 +238,18 @@ header.site-header {
     position: relative;
     z-index: 1;
 }
-  
+
 .new-deals-region .bar {
     flex: 0 0 120px;
     max-width: 120px;
     height: 2px;
-    background-color: #000; 
+    background-color: #000;
 }
-  
+
 .new-deals-region .bar.left {
     margin-right: 16px;
 }
-  
+
 .new-deals-region .bar.right {
     margin-left: 16px;
 }
@@ -249,16 +262,16 @@ header.site-header {
     gap: 60px;
     margin-top: 60px;
 }
-  
+
 .new-deals-list .deal-card {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 30px;
     width: 520px;
-    background: rgba(255,255,255,0.9);
+    background: rgba(255, 255, 255, 0.9);
     padding: 24px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .deal-card .user-icon-region {
@@ -279,7 +292,7 @@ header.site-header {
     font-weight: bold;
     color: #333;
 }
-  
+
 .deal-card .deal-info {
     display: flex;
     flex-direction: column;
@@ -300,4 +313,97 @@ header.site-header {
     font-size: 1rem;
     color: #F4C150;
 }
-  
+
+/* Overplay */
+.overlay,
+.side-bar-list {
+    display: none;
+}
+
+/* the overplay should appear when sidebar come out */
+.overlay.visible {
+    display: block;
+}
+
+.side-bar-list.visible {
+    display: flex;
+}
+
+/* Side Bar style */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+.side-bar-list {
+    background-color: #FFF678;
+    width: 460px;
+    height: 100vh;
+    padding: 60px 40px 30px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.side-bar-list ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-bar-list li {
+    font-size: 26px;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.side-bar-list li:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+.side-bar-list .icon {
+    margin-right: 12px;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.back-btn {
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: left;
+}
+
+.back-btn button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+}
+
+.back-btn button img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
