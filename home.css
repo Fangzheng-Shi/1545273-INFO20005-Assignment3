@@ -3,6 +3,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
     color: black;
+    position: relative;
+    z-index: 0;
 }
 
 * {
@@ -166,23 +168,6 @@ header.site-header {
     background: #000;
 }
 
-@media (max-width: 600px) {
-    header.site-header {
-        flex-direction: column;
-        align-items: stretch;
-        padding: 10px;
-        height: auto;
-    }
-
-    .site-header .search-region input {
-        display: none;
-    }
-
-    button.carousel-control {
-        bottom: 40px;
-    }
-}
-
 /* Four button sections */
 .main-sections {
     display: flex;
@@ -197,22 +182,24 @@ header.site-header {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 80px;
+    min-height: 90px;
     padding: 0 15px;
     background-color: #F2622E;
     color: #FFF;
     border-radius: 4px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 21px;
+    font-family:'Times New Roman', Times, serif;
     text-decoration: none;
     cursor: pointer;
 }
 
 .main-sections .section img {
-    width: 24px;
+    width: 40px;
     height: auto;
     margin-right: 10px;
     margin-top: 5px;
+    filter: brightness(0) invert(1); /* Make the icons white */
 }
 
 .main-sections .section:hover {
@@ -224,7 +211,7 @@ header.site-header {
     background:
         linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
         url('sources/back1.png') center center / cover no-repeat;
-    padding: 80px 0;
+    padding: 50px 0;
     position: relative;
 }
 
@@ -240,18 +227,18 @@ header.site-header {
 }
 
 .new-deals-region .bar {
-    flex: 0 0 120px;
-    max-width: 120px;
+    flex-grow: 0 0 auto;
+    width: 410px;
     height: 2px;
     background-color: #000;
 }
 
 .new-deals-region .bar.left {
-    margin-right: 16px;
+    margin-right: 60px;
 }
 
 .new-deals-region .bar.right {
-    margin-left: 16px;
+    margin-left: 60px;
 }
 
 /* New deals lists under new-deals-region*/
@@ -326,10 +313,9 @@ header.site-header {
 }
 
 .side-bar-list.visible {
-    display: flex;
+    display: flex !important;
 }
 
-/* Side Bar style */
 .overlay {
     position: fixed;
     top: 0;
@@ -340,6 +326,7 @@ header.site-header {
     z-index: 10;
 }
 
+/* Side Bar style */
 .side-bar-list {
     background-color: #FFF678;
     width: 460px;
@@ -350,7 +337,7 @@ header.site-header {
     left: 0;
     z-index: 20;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .side-bar-list ul {
@@ -363,15 +350,16 @@ header.site-header {
 }
 
 .side-bar-list li {
-    font-size: 26px;
-    padding: 20px 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px 0;
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 100%;
     box-sizing: border-box;
+    font-size: 26px;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .side-bar-list li:hover {
