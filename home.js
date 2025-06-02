@@ -62,3 +62,14 @@ document.getElementById("overlay").addEventListener("click", function () {
     document.getElementById("sidebar").classList.remove("visible");
     document.getElementById("overlay").classList.remove("visible");
 });
+
+// Go to shopping cart
+document.addEventListener("DOMContentLoaded", function() {
+    const cartRegion = document.getElementById("headerCart");
+    if (cartRegion) {
+        cartRegion.style.cursor = "pointer";
+        cartRegion.addEventListener("click", function() {
+            window.location.href = "shoppingCart.html";
+        });
+    }
+});

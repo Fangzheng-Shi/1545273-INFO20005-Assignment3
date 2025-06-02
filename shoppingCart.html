@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping cart page</title>
+    <link rel="stylesheet" href="shoppingCart.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="left-side">
+            <div class="menu-btn">
+                <button onclick="openSideBar()">
+                    <img src="sources/burger-menu-svgrepo-com.svg" id="burger-menu" />
+                </button>
+            </div>
+            <span class="logo">
+                <span class="logo-text1">OZ</span>
+                <span class="logo-text2">Bargain</span>
+                <img src="sources/tag-svgrepo-com.svg" class="tag-icon" />
+            </span>
+        </div>
+
+        <div class="right-side">
+            <div class="search-region">
+                <img src="sources/search-svgrepo-com.svg" class="search-icon" />
+                <input type="text" id="searchBar" />
+            </div>
+            <div class="person-region">
+                <img src="sources/person-svgrepo-com.svg" class="person-icon" />
+            </div>
+            <div class="cart-region">
+                <img src="sources/cart-shopping-svgrepo-com.svg" class="cart-icon" />
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a> /
+        <a href="productList.html">Coupon</a> /
+        <span>Product</span>
+    </nav>
+
+    <main>
+        <div id="cartItemsContainer" class="cart-items-container">
+            <!-- Dynamic insert: if the cart is empty it only show words, otherwise it show the details -->
+            <p class="empty-content">Nothing Here. Go check out what you want~</p>
+        </div>
+
+        <!-- Show this content when something added to the cart -->
+        <div id="cartTotalContainer" class="cart-total-container">
+            <span class="cart-total-label">You should Pay:</span>
+            <span class="cart-total-value" id="cartTotalValue">$0.00</span>
+        </div>
+    </main>
+
+    
+    <aside class="you-may-like">
+        <h3>You may like</h3>
+        <ul>
+          <li>
+            <img src="sources/product_hungry_jacks.png" alt="Hungry Jack Coupon" />
+            <span class="rec-price">$1.89</span>
+            <a href="productDetail.html?id=hungryJack">Hungry Jack Coupon</a>
+          </li>
+          <li>
+            <img src="sources/product_macca.png" alt="McSmart Meal Coupon" />
+            <span class="rec-price">$2.89</span>
+            <a href="productDetail.html?id=maccaMeal">McSmart Meal Coupon</a>
+          </li>
+        </ul>
+      </aside>
+
+      <script src="shoppingCart.js"></script>
+</body>
+
+</html>

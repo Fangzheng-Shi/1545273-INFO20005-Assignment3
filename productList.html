@@ -31,7 +31,7 @@
             <div class="person-region">
                 <img src="sources/person-svgrepo-com.svg" class="person-icon" />
             </div>
-            <div class="cart-region">
+            <div class="cart-region" id="headerCart">
                 <img src="sources/cart-shopping-svgrepo-com.svg" class="cart-icon" />
                 <span class="cart-count" id="cartCount">0</span>
             </div>
@@ -46,16 +46,17 @@
         </div>
     </div>
 
+    <!-- Three buttons -->
     <div class="filter-buttons">
-        <div class="button 1">
+        <div class="button btn1">
             <p class="button-text">Deals</p>
             <span class="deal-icon"><img src="sources/deal-svgrepo-com.svg" /></span>
         </div>
-        <div class="button 2">
+        <div class="button btn2">
             <p class="button-text">Forum</p>
             <span class="forum-icon"><img src="sources/forum-svgrepo-com (1).svg" /></span>
         </div>
-        <div class="button 3">
+        <div class="button btn3">
             <p class="button-text">Filter</p>
             <span class="filter-icon"><img src="sources/filter-svgrepo-com.svg" /></span>
         </div>
@@ -63,86 +64,131 @@
 
     <div class="container">
         <!-- Card 1 -->
-        <div class="card">
-          <div class="card-content">
-            <div class="card-text">
-              <h2 class="card-title">Uber Ride $20 OFF</h2>
-              <p class="price"><span class="price-highlight">$4.99</span> per each</p>
-              <p class="rating">Overall Rate: ★★★★★</p>
-              <p class="date">Date: <u>before 2025-10-11</u></p>
-              <p class="stock green">🟢 Stock: Sufficient</p>
-              <div class="btn-group">
+        <div class="card" onclick="window.location.href='productPage.html?id=uber20off'">
+            <div class="card-content">
+                <div class="card-text">
+                    <h2 class="card-title">Uber Ride $20 OFF</h2>
+                    <p class="price"><span class="price-highlight">$4.99</span> per each</p>
+                    <!-- <p class="rating">Overall Rate: ★★★★★</p> -->
+                    <p class="rating">
+                        Overall Rate:
+                        <span class="rating-stars sgreen">★★★★★</span>
+                    </p>
+                    <p class="date">Date: <u>before 2025-10-11</u></p>
+                    <p class="stock green">
+                        <span class="stock-dot green"></span>
+                        Stock: Sufficient
+                    </p>
+                    <!-- <div class="btn-group">
                 <button>Buy Now</button>
                 <button>Add to cart</button>
-              </div>
+              </div> -->
+                </div>
+                <div class="card-img">
+                    <img src="sources/product_uber.png" alt="Uber Coupon" />
+                    <div class="btn-group vertical">
+                        <!-- Prevent add the buttons to open the product's page -->
+                        <button onclick="event.stopPropagation();">Buy Now</button>
+                        <button class="add-to-cart" onclick="event.stopPropagation();">Add to cart</button>
+                    </div>
+                </div>
             </div>
-            <div class="card-img">
-              <img src="sources/product_uber.png" alt="Uber Coupon" />
-            </div>
-          </div>
         </div>
-      
+
         <!-- Card 2 -->
         <div class="card">
-          <div class="card-content">
-            <div class="card-text">
-              <h2 class="card-title">Macca Meal Coupon</h2>
-              <p class="price"><span class="price-highlight">$2.99</span> per each</p>
-              <p class="rating">Overall Rate: ★★★★☆</p>
-              <p class="date">Date: <u>before 2025-05-03</u></p>
-              <p class="stock red">🔴 Stock: 10 Left</p>
-              <div class="btn-group">
+            <div class="card-content">
+                <div class="card-text">
+                    <h2 class="card-title">McSmart Meal Coupon</h2>
+                    <p class="price"><span class="price-highlight">$2.99</span> per each</p>
+                    <!-- <p class="rating">Overall Rate: ★★★★☆</p> -->
+                    <p class="rating">
+                        Overall Rate:
+                        <span class="rating-stars sgreen">★★★★★</span>
+                    </p>
+                    <p class="date">Date: <u>before 2025-05-03</u></p>
+                    <p class="stock red">
+                        <span class="stock-dot red"></span>
+                        Stock: 10 Left
+                    </p>
+                    <!-- <div class="btn-group">
                 <button>Buy Now</button>
                 <button>Add to cart</button>
-              </div>
+              </div> -->
+                </div>
+                <div class="card-img">
+                    <img src="sources/product_macca.png" alt="Macca Meal" />
+                    <div class="btn-group vertical">
+                        <button onclick="event.stopPropagation();">Buy Now</button>
+                        <button onclick="event.stopPropagation();">Add to cart</button>
+                    </div>
+                </div>
             </div>
-            <div class="card-img">
-              <img src="sources/product_macca.png" alt="Macca Meal" />
-            </div>
-          </div>
         </div>
-      
+
         <!-- Card 3 -->
         <div class="card">
-          <div class="card-content">
-            <div class="card-text">
-              <h2 class="card-title">McSmart Meal Coupon</h2>
-              <p class="price"><span class="price-highlight">$2.99</span> per each</p>
-              <p class="rating">Overall Rate: ★★★★★</p>
-              <p class="date">Date: <u>before 2025-10-11</u></p>
-              <p class="stock green">🟢 Stock: Sufficient</p>
-              <div class="btn-group">
+            <div class="card-content">
+                <div class="card-text">
+                    <h2 class="card-title">Macca Meal Coupon</h2>
+                    <p class="price"><span class="price-highlight">$2.99</span> per each</p>
+                    <!-- <p class="rating">Overall Rate: ★★★★★</p> -->
+                    <p class="rating">
+                        Overall Rate:
+                        <span class="rating-stars sgreen">★★★★★</span>
+                    </p>
+                    <p class="date">Date: <u>before 2025-10-11</u></p>
+                    <p class="stock green">
+                        <span class="stock-dot green"></span>
+                        Stock: Sufficient
+                    </p>
+                    <!-- <div class="btn-group">
                 <button>Buy Now</button>
                 <button>Add to cart</button>
-              </div>
+              </div> -->
+                </div>
+                <div class="card-img">
+                    <img src="sources/product_mega.png" alt="McSmart Meal" />
+                    <div class="btn-group vertical">
+                        <button onclick="event.stopPropagation();">Buy Now</button>
+                        <button class="add-to-cart" onclick="event.stopPropagation();">Add to cart</button>
+                    </div>
+                </div>
             </div>
-            <div class="card-img">
-              <img src="sources/product_mega.png" alt="McSmart Meal" />
-            </div>
-          </div>
         </div>
-      
+
         <!-- Card 4 -->
         <div class="card">
-          <div class="card-content">
-            <div class="card-text">
-              <h2 class="card-title">Hungry Jack Coupon</h2>
-              <p class="price"><span class="price-highlight">$4.99</span> per each</p>
-              <p class="rating">Overall Rate: ★★★★☆</p>
-              <p class="date">Date: <u>before 2025-05-03</u></p>
-              <p class="stock red">🔴 Stock: 10 Left</p>
-              <div class="btn-group">
+            <div class="card-content">
+                <div class="card-text">
+                    <h2 class="card-title">Hungry Jack Coupon</h2>
+                    <p class="price"><span class="price-highlight">$4.99</span> per each</p>
+                    <!-- <p class="rating">Overall Rate: ★★★★☆</p> -->
+                    <p class="rating">
+                        Overall Rate:
+                        <span class="rating-stars sgreen">★★★★☆</span>
+                    </p>
+                    <p class="date">Date: <u>before 2025-05-03</u></p>
+                    <p class="stock red">
+                        <span class="stock-dot red"></span>
+                        Stock: 10 Left
+                    </p>
+                    <!-- <div class="btn-group">
                 <button>Buy Now</button>
                 <button>Add to cart</button>
-              </div>
+              </div> -->
+                </div>
+                <div class="card-img">
+                    <img src="sources/product_hungry_jacks.png" alt="Hungry Jack" />
+                    <div class="btn-group vertical">
+                        <button onclick="event.stopPropagation();">Buy Now</button>
+                        <button onclick="event.stopPropagation();">Add to cart</button>
+                    </div>
+                </div>
             </div>
-            <div class="card-img">
-              <img src="sources/product_hungry_jacks.png" alt="Hungry Jack" />
-            </div>
-          </div>
         </div>
-      </div>
-      
+    </div>
+
 
     <!--The dark overplay setting while sidebar showing-->
     <div class="overlay" id="overlay"></div>
