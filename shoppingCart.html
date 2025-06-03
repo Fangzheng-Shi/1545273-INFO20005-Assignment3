@@ -41,40 +41,67 @@
     <nav class="nav-links">
         <a href="index.html">Home</a> /
         <a href="productList.html">Coupon</a> /
-        <span>Product</span>
+        <span>Cart</span>
     </nav>
 
-    <main>
-        <div id="cartItemsContainer" class="cart-items-container">
-            <!-- Dynamic insert: if the cart is empty it only show words, otherwise it show the details -->
-            <p class="empty-content">Nothing Here. Go check out what you want~</p>
+    <main class="cart-wrapper">
+        <!-- Left Side: Cart Items -->
+        <div class="cart-left">
+            <div id="cartItemsContainer" class="cart-items-container">
+                <p class="empty-content">Nothing Here. Go check out what you want~</p>
+            </div>
         </div>
 
-        <!-- Show this content when something added to the cart -->
-        <div id="cartTotalContainer" class="cart-total-container">
-            <span class="cart-total-label">You should Pay:</span>
-            <span class="cart-total-value" id="cartTotalValue">$0.00</span>
+        <!-- Right Side: Recommendations -->
+        <aside class="you-may-like">
+            <h3>You may like</h3>
+            <ul>
+                <li>
+                    <img src="sources/product_hungry_jacks.png" alt="Hungry Jack Coupon" />
+                    <div class="rec-info">
+                        <span class="rec-price">$4.99</span>
+                        <a href="#">Hungry Jack Coupon</a>
+                    </div>
+                </li>
+                <li>
+                    <img src="sources/product_macca.png" alt="McSmart Meal Coupon" />
+                    <div class="rec-info">
+                        <span class="rec-price">$2.99</span>
+                        <a href="#">McSmart Meal Coupon</a>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+
+        <!-- Fixed Total Price at Bottom-Left -->
+        <div class="cart-total-fixed" id="cartTotalContainer" style="display: none;">
+            <span class="ysp-text">You should Pay: <span id="cartTotalValue">$0.00</span></span>
+            <button class="buy-now-button">Buy Now</button>
         </div>
     </main>
 
-    
-    <aside class="you-may-like">
-        <h3>You may like</h3>
-        <ul>
-          <li>
-            <img src="sources/product_hungry_jacks.png" alt="Hungry Jack Coupon" />
-            <span class="rec-price">$1.89</span>
-            <a href="productDetail.html?id=hungryJack">Hungry Jack Coupon</a>
-          </li>
-          <li>
-            <img src="sources/product_macca.png" alt="McSmart Meal Coupon" />
-            <span class="rec-price">$2.89</span>
-            <a href="productDetail.html?id=maccaMeal">McSmart Meal Coupon</a>
-          </li>
-        </ul>
-      </aside>
+    <!--The dark overplay setting while sidebar showing-->
+    <div class="overlay" id="overlay"></div>
 
-      <script src="shoppingCart.js"></script>
+    <!--Side bar-->
+    <div class="side-bar-list" id="sidebar">
+        <ul>
+            <li><span class="icon">▶</span> Notification</li>
+            <li><span class="icon">▶</span> About Us</li>
+            <li><span class="icon">▶</span> Log in</li>
+            <li><span class="icon">▶</span> Sign up</li>
+            <li><span class="icon">▶</span> Settings</li>
+            <li><span class="icon">▶</span> Report Problems</li>
+        </ul>
+        <div class="back-btn">
+            <button id="closeSidebar">
+                <img src="sources/forward-circle-fill-svgrepo-com.svg" alt="closeSidebar">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script src="shoppingCart.js"></script>
 </body>
 
 </html>

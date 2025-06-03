@@ -63,13 +63,22 @@ document.getElementById("overlay").addEventListener("click", function () {
     document.getElementById("overlay").classList.remove("visible");
 });
 
-// Go to shopping cart
+// Go to shopping cart and sync cartCount
 document.addEventListener("DOMContentLoaded", function() {
+    // —— 1. 点击头部购物车图标跳转到购物车页面 —— 
     const cartRegion = document.getElementById("headerCart");
     if (cartRegion) {
         cartRegion.style.cursor = "pointer";
         cartRegion.addEventListener("click", function() {
             window.location.href = "shoppingCart.html";
         });
+    }
+
+    // —— 2. 读取 localStorage.cartCount 并显示到 <span id="cartCount"> —— 
+    const cartCountSpan = document.getElementById("cartCount");
+    if (cartCountSpan) {
+        // 如果 localStorage 中有 cartCount，就用它；否则显示 0
+        const savedCount = parseInt(localStorage.getItem("cartCount")) || 0;
+        cartCountSpan.textContent = savedCount;
     }
 });
