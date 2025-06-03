@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // To implement functions for shopping cart
 document.addEventListener("DOMContentLoaded", function() {
-    // 1. 定义这两个商品的静态信息
+    // Define the information of two products I am going to use
     const products = {
         "uber20off": {
             id: "uber20off",
@@ -23,26 +23,25 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
   
-    // 2. 获取 DOM 引用
     const cartItemsContainer  = document.getElementById("cartItemsContainer");
     const cartTotalContainer  = document.getElementById("cartTotalContainer");
     const cartTotalValue      = document.getElementById("cartTotalValue");
     const headerCartCountSpan = document.getElementById("cartCount");
   
-    // 3. 读取 localStorage
+    // Read data from localStorage
     const cartCount = parseInt(localStorage.getItem("cartCount")) || 0;
     headerCartCountSpan.textContent = cartCount;
   
-    // 4. 读取 shoppingCart 对象（{ uber20off: x, maccaMeal: y }）
+    // Read data from shoppingCart（{ uber20off: x, maccaMeal: y }）
     let shoppingCart = JSON.parse(localStorage.getItem("shoppingCart")) || {};
   
-    // 5. 渲染购物车项的函数
+    // The function to render the cart
     function renderCartItems() {
-        cartItemsContainer.innerHTML = ""; // 清空旧内容
+        cartItemsContainer.innerHTML = ""; // Clean old contents
         let totalPrice = 0;
         let hasAnyItem = false;
   
-        // 遍历 “uber20off” 和 “maccaMeal” 这两个 key
+        // Traverse “uber20off” and “maccaMeal” two keys
         Object.keys(products).forEach(prodId => {
             const quantity = parseInt(shoppingCart[prodId]) || 0;
             if (quantity > 0) {
@@ -51,42 +50,39 @@ document.addEventListener("DOMContentLoaded", function() {
                 const lineTotal = prod.price * quantity;
                 totalPrice += lineTotal;
   
-                // 创建商品行
+                // Create product items within the cart page
                 const itemDiv = document.createElement("div");
                 itemDiv.className = "cart-item";
                 itemDiv.dataset.prodid = prodId;
                 itemDiv.innerHTML = `
                     <img src="${prod.imgSrc}" alt="${prod.name}" />
                     <div class="cart-item-details">
-                        <div class="item-info">
-                            <span class="item-name">${prod.name}</span>
-                            <div class="quantity-controls">
-                                <button class="qty-decrease">−</button>
-                                <span class="qty-value">${quantity}</span>
-                                <button class="qty-increase">+</button>
-                            </div>
-                            <span class="item-price">$${prod.price.toFixed(2)}</span>
+                        <span class="item-name">${prod.name}</span>
+                        <div class="quantity-controls">
+                            <button class="qty-decrease">−</button>
+                            <span class="qty-value">${quantity}</span>
+                            <button class="qty-increase">+</button>
                         </div>
                         <span class="line-total">$${lineTotal.toFixed(2)}</span>
                     </div>
                 `;
                 cartItemsContainer.appendChild(itemDiv);
   
-                // 5.1 绑定 “+” 按钮
+                // bind “+” button
                 const btnInc = itemDiv.querySelector(".qty-increase");
                 btnInc.addEventListener("click", function() {
                     shoppingCart[prodId] = (shoppingCart[prodId] || 0) + 1;
                     localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
   
-                    // cartCount 也要 +1
+                    // cartCount +1 as well
                     const newCartCount = parseInt(localStorage.getItem("cartCount")) + 1;
                     localStorage.setItem("cartCount", newCartCount);
                     headerCartCountSpan.textContent = newCartCount;
   
-                    renderCartItems(); // 重新渲染
+                    renderCartItems(); // re-render
                 });
   
-                // 5.2 绑定 “−” 按钮
+                // bind “−” button
                 const btnDec = itemDiv.querySelector(".qty-decrease");
                 btnDec.addEventListener("click", function() {
                     const prev = parseInt(shoppingCart[prodId]) || 0;
@@ -94,25 +90,26 @@ document.addEventListener("DOMContentLoaded", function() {
                         shoppingCart[prodId] = prev - 1;
                         localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
   
-                        // cartCount 也要 −1
+                        // cartCount −1 as well
                         const newCartCount = Math.max(0, parseInt(localStorage.getItem("cartCount")) - 1);
                         localStorage.setItem("cartCount", newCartCount);
                         headerCartCountSpan.textContent = newCartCount;
   
-                        renderCartItems(); // 重新渲染
+                        renderCartItems(); // re-render
                     }
                 });
             }
         });
   
-        // 6. 根据 hasAnyItem 决定是否显示 “您应支付” 和隐藏/显示“Nothing Here”
+        // Decided whether to show the total price and corresponding info according to hasAnyItem
+        // or just nothing here...
         if (hasAnyItem) {
             cartTotalValue.textContent = `$${totalPrice.toFixed(2)}`;
             cartTotalContainer.style.display = "flex";
             const emptyP = cartItemsContainer.querySelector(".empty-content");
             if (emptyP) emptyP.remove();
         } else {
-            // 如果没有任何商品，则插入 “空” 提示
+            // Tell users it is empty in the cart if nothing has been added
             if (!cartItemsContainer.querySelector(".empty-content")) {
                 const p = document.createElement("p");
                 p.className = "empty-content";
@@ -125,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
   
-    // 页面加载时首次渲染
+    // render when the page is loaded
     renderCartItems();
 });
-  
+

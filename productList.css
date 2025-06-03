@@ -300,6 +300,10 @@ a.logo {
     letter-spacing: 2px;
 }
 
+.rating-stars.sred {
+    color: #FF1313;
+    letter-spacing: 2px;
+}
 
 .stock-dot {
     display: inline-block;
@@ -343,8 +347,7 @@ a.logo {
 .btn-group.vertical {
     display: flex;
     flex-direction: column;
-    align-items: center
-    gap: 12px;
+    align-items: center gap: 12px;
     margin-top: 12px;
 }
 
@@ -441,4 +444,64 @@ a.logo {
     width: 24px;
     height: 24px;
     object-fit: contain;
+}
+
+/* Load more button */
+.load-more-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.load-more-button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 16px;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.load-more-button:hover {
+    background-color: #333;
+    cursor: pointer;
+}
+
+/* The filter menu */
+#filterBtn {
+    position: relative;
+}
+
+.filter-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 15;
+    overflow: hidden;
+}
+
+.filter-dropdown .dropdown-item {
+    padding: 15px 12px;
+    font-size: 16px;
+    color: #000;
+    cursor: pointer;
+    border-bottom: 1px solid #bbb;
+}
+
+.filter-dropdown .dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.filter-dropdown .dropdown-item:hover {
+    background-color: #bbb;
+}
+
+/* The js will control the show and hidden status */
+.filter-dropdown.show {
+    display: block;
 }

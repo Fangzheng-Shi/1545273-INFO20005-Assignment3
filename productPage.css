@@ -216,3 +216,65 @@ a.logo {
     height: 24px;
     object-fit: contain;
 }
+
+/* main part of the page */
+.product-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+    gap: 60px;
+}
+
+.product-image img {
+    width: 320px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+    max-width: 300px;
+}
+
+.product-title {
+    font-size: 32px;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+}
+
+.rating {
+    font-size: 20px;
+    color: #FFD700;
+}
+
+.stock {
+    font-size: 18px;
+    color: #28a745;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
+
+.add-to-cart {
+    padding: 12px 20px;
+    font-size: 16px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #333;
+}

@@ -1,0 +1,218 @@
+/* Style settings for whole body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    color: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header region */
+header.site-header {
+    background-color: #F2E205;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 100px;
+}
+
+.site-header .menu-btn {
+    cursor: pointer;
+}
+
+.menu-btn button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.site-header .left-side {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: 20px;
+}
+
+.site-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+a.logo {
+    color: inherit;
+    text-decoration: none;
+}
+
+.site-header .logo-text1,
+.site-header .logo-text2 {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.site-header .logo-text1 {
+    display: inline-block;
+    padding: 4px 8px;
+    border: 3px solid #000;
+    border-radius: 10px;
+}
+
+.site-header .right-side {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.site-header .search-region,
+.site-header .person-region,
+.site-header .cart-region {
+    margin-top: 12px;
+}
+
+.site-header .search-region {
+    display: flex;
+    align-items: center;
+    background: #FFF;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.search-region img {
+    width: 20px;
+    margin-right: 8px;
+}
+
+.search-region input {
+    border: none;
+    outline: none;
+    width: 200px;
+    font-size: 16px;
+}
+
+.user-btn,
+.cart-region {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    margin-right: 10px;
+}
+
+.cart-region .cart-count {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #4693E4;
+    color: #fff;
+    font-size: 10px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Overplay */
+.overlay,
+.side-bar-list {
+    display: none;
+}
+
+/* the overplay should appear when sidebar come out */
+.overlay.visible {
+    display: block;
+}
+
+.side-bar-list.visible {
+    display: flex !important;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 10;
+}
+
+/* Side Bar style */
+.side-bar-list {
+    background-color: #FFF678;
+    width: 460px;
+    height: 100vh;
+    padding: 60px 40px 30px 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.side-bar-list ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-bar-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 26px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.side-bar-list li:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+}
+
+.side-bar-list .icon {
+    margin-right: 12px;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.back-btn {
+    margin-top: 40px;
+    padding-top: 20px;
+    text-align: left;
+}
+
+.back-btn button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #333;
+}
+
+.back-btn button img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}

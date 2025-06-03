@@ -17,57 +17,78 @@ document.getElementById("overlay").addEventListener("click", function () {
 });
 
 // To change the number when click "adding to cart"
-/**
- * productList.js
- * 只针对 Uber (uber20off) 和 Macca (maccaMeal) 这两个商品的 Add to cart 按钮，
- * 实现：
- *  1. 点击某个按钮，将 localStorage 中的 cartCount +1，
- *  2. 同时将具体商品数量存到 localStorage.shoppingCart 对象里，
- *  3. 更新页面头部 #cartCount 数字。
- */
-
 document.addEventListener("DOMContentLoaded", function() {
-    // 1. 找到“头部购物车计数”节点
+
     const cartCountSpan = document.getElementById("cartCount");
   
-    // 2. 初始化：从 localStorage 读取 cartCount
+    // Initialization：read cartCount data from localStorage
     const savedCount = parseInt(localStorage.getItem("cartCount")) || 0;
     cartCountSpan.textContent = savedCount;
   
-    // 3. 初始化：如果 localStorage.shoppingCart 为空，先给个空对象，否则解析它
+    // Initialization：if localStorage.shoppingCart is empty，assign it to a empty set
     const shoppingCartObj = JSON.parse(localStorage.getItem("shoppingCart")) || {};
   
-    // 4. 绑定所有 .add-to-cart 按钮的点击事件
+    // Bind all .add-to-cart buttons
     const addButtons = document.querySelectorAll(".add-to-cart");
     addButtons.forEach(function(btn) {
-      btn.addEventListener("click", function(event) {
-        event.stopPropagation();
+        btn.addEventListener("click", function(event) {
+            event.stopPropagation();
   
-        // —— a) 更新总数量 cartCount —— 
-        const currentCount = parseInt(cartCountSpan.textContent) || 0;
-        const newCount = currentCount + 1;
-        cartCountSpan.textContent = newCount;
-        localStorage.setItem("cartCount", newCount);
+            // Update numbers in cartCount 
+            const currentCount = parseInt(cartCountSpan.textContent) || 0;
+            const newCount = currentCount + 1;
+            cartCountSpan.textContent = newCount;
+            localStorage.setItem("cartCount", newCount);
   
-        // —— b) 更新具体商品 ID 在 shoppingCartObj 中的数量 —— 
-        const prodId = this.dataset.id; // "uber20off" 或 "maccaMeal"
+            // Update the specific product ID and show its amount in shoppingCartObj
+            const prodId = this.dataset.id; // "uber20off" or "maccaMeal"
   
-        // 如果该 prodId 不存在，就默认为 0，再 +1
-        const prevQty = parseInt(shoppingCartObj[prodId]) || 0;
-        shoppingCartObj[prodId] = prevQty + 1;
+            // If the prodId does not exist，default 0，then +1
+            const prevQty = parseInt(shoppingCartObj[prodId]) || 0;
+            shoppingCartObj[prodId] = prevQty + 1;
   
-        // 存回 localStorage
-        localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartObj));
-      });
+            // store in localStorage
+            localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartObj));
+        });
     });
   
-    // 5. （可选）绑定“点击头部购物车图标”跳转到购物车页面
+    // Bind "click the shopping cart icon in the head" to jump to the shopping cart page
     const headerCart = document.getElementById("headerCart");
     if (headerCart) {
-      headerCart.style.cursor = "pointer";
-      headerCart.addEventListener("click", function() {
-        window.location.href = "shoppingCart.html";
-      });
+        headerCart.style.cursor = "pointer";
+        headerCart.addEventListener("click", function() {
+            window.location.href = "shoppingCart.html";
+        });
     }
-  });
-  
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // First get the Filter button and menu
+    const filterBtn = document.getElementById("filterBtn");
+    const dropdown = document.getElementById("filterDropdown");
+
+    if (filterBtn && dropdown) {
+        // When click the button：switch class to .show in css
+        filterBtn.addEventListener("click", function(event) {
+            event.stopPropagation(); 
+            // switch the class name of show
+            dropdown.classList.toggle("show");
+        });
+
+        // Click anywhere to close the menu
+        document.addEventListener("click", function() {
+            // if.show exists，then remove it
+            if (dropdown.classList.contains("show")) {
+                dropdown.classList.remove("show");
+            }
+        });
+
+        // When clicking on an item inside a menu: you can prevent event bubbling
+        dropdown.addEventListener("click", function(event) {
+            event.stopPropagation();
+            // const selected = event.target.innerText;
+            // console.log("click：", selected);
+            dropdown.classList.remove("show"); // Click the filter choices and the menu closes
+        });
+    }
+});

@@ -279,7 +279,10 @@ main {
 .cart-item-details {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    /* gap: 8px; */
+    /* justify-content: space-around;
+    height: 150px; */
+    justify-content: space-between;
 }
 
 .item-name {
@@ -290,22 +293,32 @@ main {
 .quantity-controls {
     display: flex;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+    /* gap: 10px; */
+    border: 1px solid #999;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 34px;
 }
 
 .quantity-controls button {
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 100%;
     border-radius: 50%;
-    border: 1px solid #999;
-    font-size: 16px;
+    border: none;
+    font-size: 18px;
     background: #fff;
     cursor: pointer;
 }
 
 .qty-value {
-    width: 30px;
+    width: 40px;
     text-align: center;
+    line-height: 34px;
+    font-size: 16px;
+    background-color: #fff;
 }
 
 .item-price,
@@ -372,7 +385,7 @@ main {
 /* Total price area */
 .cart-total-fixed {
     position: absolute;
-    bottom: 120px;
+    bottom: 180px;
     left: 50%;
     display: flex;
     align-items: center;
@@ -380,24 +393,27 @@ main {
     font-size: 20px;
     font-weight: bold;
     color: red;
-    transform: translateX(calc(-60% - 290px));
+    transform: translateX(calc(-60% - 270px));
 }
 
 .buy-now-button {
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 6px;
+    background-color: #FF1313;
+    color: black;
+    border: 0.5px solid #000;
     padding: 8px 20px;
     font-size: 16px;
     cursor: pointer;
+    position: relative;
+    left: 260px;
 }
 
 #cartTotalValue {
-    color:black;
+    color: black;
+    font-size: 1.5rem;
 }
 
 .ysp-text {
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 1.4rem;
 }
+

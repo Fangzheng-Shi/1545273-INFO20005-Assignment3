@@ -56,15 +56,22 @@
             <p class="button-text">Forum</p>
             <span class="forum-icon"><img src="sources/forum-svgrepo-com (1).svg" /></span>
         </div>
-        <div class="button btn3">
+        <div class="button btn3" id="filterBtn">
             <p class="button-text">Filter</p>
             <span class="filter-icon"><img src="sources/filter-svgrepo-com.svg" /></span>
+            <div class="filter-dropdown" id="filterDropdown">
+                <div class="dropdown-item">Most Purchase</div>
+                <div class="dropdown-item">Cheapest Ones</div>
+                <div class="dropdown-item">Longest Dates</div>
+                <div class="dropdown-item">Service Coupon Only</div>
+                <div class="dropdown-item">Food Coupon Only</div>
+                <div class="dropdown-item">Necessities Only</div>
+            </div>
         </div>
     </div>
 
     <div class="container">
-        <!-- Card 1 -->
-        <div class="card" onclick="window.location.href='productPage.html?id=uber20off'">
+        <div class="card">
             <div class="card-content">
                 <div class="card-text">
                     <h2 class="card-title">Uber Ride $20 OFF</h2>
@@ -79,10 +86,6 @@
                         <span class="stock-dot green"></span>
                         Stock: Sufficient
                     </p>
-                    <!-- <div class="btn-group">
-                <button>Buy Now</button>
-                <button>Add to cart</button>
-              </div> -->
                 </div>
                 <div class="card-img">
                     <img src="sources/product_uber.png" alt="Uber Coupon" />
@@ -95,7 +98,6 @@
             </div>
         </div>
 
-        <!-- Card 2 -->
         <div class="card">
             <div class="card-content">
                 <div class="card-text">
@@ -111,10 +113,6 @@
                         <span class="stock-dot red"></span>
                         Stock: 10 Left
                     </p>
-                    <!-- <div class="btn-group">
-                <button>Buy Now</button>
-                <button>Add to cart</button>
-              </div> -->
                 </div>
                 <div class="card-img">
                     <img src="sources/product_macca.png" alt="Macca Meal" />
@@ -126,8 +124,7 @@
             </div>
         </div>
 
-        <!-- Card 3 -->
-        <div class="card">
+        <div class="card"  onclick="window.location.href='productPage.html?id=maccaMeal'">
             <div class="card-content">
                 <div class="card-text">
                     <h2 class="card-title">Macca Meal Coupon</h2>
@@ -142,10 +139,6 @@
                         <span class="stock-dot green"></span>
                         Stock: Sufficient
                     </p>
-                    <!-- <div class="btn-group">
-                <button>Buy Now</button>
-                <button>Add to cart</button>
-              </div> -->
                 </div>
                 <div class="card-img">
                     <img src="sources/product_mega.png" alt="McSmart Meal" />
@@ -157,13 +150,11 @@
             </div>
         </div>
 
-        <!-- Card 4 -->
         <div class="card">
             <div class="card-content">
                 <div class="card-text">
                     <h2 class="card-title">Hungry Jack Coupon</h2>
                     <p class="price"><span class="price-highlight">$4.99</span> per each</p>
-                    <!-- <p class="rating">Overall Rate: ★★★★☆</p> -->
                     <p class="rating">
                         Overall Rate:
                         <span class="rating-stars sgreen">★★★★☆</span>
@@ -173,10 +164,6 @@
                         <span class="stock-dot red"></span>
                         Stock: 10 Left
                     </p>
-                    <!-- <div class="btn-group">
-                <button>Buy Now</button>
-                <button>Add to cart</button>
-              </div> -->
                 </div>
                 <div class="card-img">
                     <img src="sources/product_hungry_jacks.png" alt="Hungry Jack" />
@@ -187,8 +174,111 @@
                 </div>
             </div>
         </div>
+
+        <div class="card">
+            <div class="card-content">
+                <div class="card-text">
+                    <h2 class="card-title">Gadgets & Accessories</h2>
+                    <p class="price"><span class="price-highlight">$9.99</span> per each</p>
+                    <p class="rating">
+                        Overall Rate:
+                        <span class="rating-stars sgreen">★★★☆☆</span>
+                    </p>
+                    <p class="date">Date: <u>before 2025-08-11</u></p>
+                    <p class="stock green">
+                        <span class="stock-dot green"></span>
+                        Stock: Sufficient
+                    </p>
+                </div>
+                <div class="card-img">
+                    <img src="sources/gadgets&acc.png" alt="Gadgets and Accessories" />
+                    <div class="btn-group vertical">
+                        <button onclick="event.stopPropagation();">Buy Now</button>
+                        <button onclick="event.stopPropagation();">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <div class="card-text">
+                    <h2 class="card-title">Matcha Supermarket</h2>
+                    <p class="price"><span class="price-highlight">$29.99</span> per each</p>
+                    <p class="rating">
+                        Overall Rate:
+                        <span class="rating-stars sred">★★☆☆☆</span>
+                    </p>
+                    <p class="date">Date: <u>before 2025-08-11</u></p>
+                    <p class="stock green">
+                        <span class="stock-dot green"></span>
+                        Stock: Sufficient
+                    </p>
+                </div>
+                <div class="card-img">
+                    <img src="sources/matcha supermarket.png" alt="matcha supermarket" />
+                    <div class="btn-group vertical">
+                        <button onclick="event.stopPropagation();">Buy Now</button>
+                        <button onclick="event.stopPropagation();">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <div class="card-text">
+                    <h2 class="card-title">Doordash 75% OFF</h2>
+                    <p class="price"><span class="price-highlight">$15.88</span> per each</p>
+                    <p class="rating">
+                        Overall Rate:
+                        <span class="rating-stars sred">★☆☆☆☆</span>
+                    </p>
+                    <p class="date">Date: <u>before 2025-08-11</u></p>
+                    <p class="stock red">
+                        <span class="stock-dot red"></span>
+                        Stock: 1 Left
+                    </p>
+                </div>
+                <div class="card-img">
+                    <img src="sources/Doordash coupon.png" alt="Doordash" />
+                    <div class="btn-group vertical">
+                        <button onclick="event.stopPropagation();">Buy Now</button>
+                        <button onclick="event.stopPropagation();">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-content">
+                <div class="card-text">
+                    <h2 class="card-title">KFC Bucket Coupon</h2>
+                    <p class="price"><span class="price-highlight">$2.99</span> per each</p>
+                    <p class="rating">
+                        Overall Rate:
+                        <span class="rating-stars sgreen">★★★★☆</span>
+                    </p>
+                    <p class="date">Date: <u>before 2025-05-03</u></p>
+                    <p class="stock red">
+                        <span class="stock-dot red"></span>
+                        Stock: 10 Left
+                    </p>
+                </div>
+                <div class="card-img">
+                    <img src="sources/KFC bucket.png" alt="KFC" />
+                    <div class="btn-group vertical">
+                        <button onclick="event.stopPropagation();">Buy Now</button>
+                        <button onclick="event.stopPropagation();">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
+    <div class="load-more-container">
+        <button class="load-more-button">Load more</button>
+    </div>
 
     <!--The dark overplay setting while sidebar showing-->
     <div class="overlay" id="overlay"></div>
