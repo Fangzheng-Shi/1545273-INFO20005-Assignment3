@@ -156,23 +156,21 @@ header.site-header {
     left: 0;
     z-index: 20;
     flex-direction: column;
-    justify-content: flex-start;
+
 }
 
 .side-bar-list ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 150px 0 0 0;
+    width: 100%;
 }
 
 .side-bar-list li {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 20px 0;
+    justify-content: flex-start;
+    padding: 12px 0 12px 30px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 100%;
@@ -202,16 +200,18 @@ header.site-header {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 23px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: #333;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    gap: 12px;
+    padding-left: 30px;
+    color: #3291df;
 }
 
 .back-btn button img {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     object-fit: contain;
 }
 
@@ -276,12 +276,14 @@ main {
     height: auto;
 }
 
+.cart-item img[src="sources/product_mega.png"] {
+    width: 210px;
+    height: auto;
+}
+
 .cart-item-details {
     display: flex;
     flex-direction: column;
-    /* gap: 8px; */
-    /* justify-content: space-around;
-    height: 150px; */
     justify-content: space-between;
 }
 
@@ -385,7 +387,7 @@ main {
 /* Total price area */
 .cart-total-fixed {
     position: absolute;
-    bottom: 180px;
+    bottom: 100px;
     left: 50%;
     display: flex;
     align-items: center;

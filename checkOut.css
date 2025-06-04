@@ -158,23 +158,21 @@ a.logo {
     left: 0;
     z-index: 20;
     flex-direction: column;
-    justify-content: flex-start;
+
 }
 
 .side-bar-list ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 150px 0 0 0;
+    width: 100%;
 }
 
 .side-bar-list li {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 20px 0;
+    justify-content: flex-start;
+    padding: 12px 0 12px 30px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 100%;
@@ -204,15 +202,204 @@ a.logo {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 23px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: #333;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    gap: 12px;
+    padding-left: 30px;
+    color: #3291df;
 }
 
 .back-btn button img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+/* Nav links */
+.nav-links {
+    margin: 16px 20px;
+    font-size: 16px;
+}
+
+.nav-links a {
+    color: #3366cc;
+    text-decoration: none;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* main part of Checkout */
+.checkout-wrapper {
+    display: flex;
+    gap: 40px;
+    margin: 20px;
+}
+
+/* shopping cart items */
+.cart-items {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Single card of the product */
+.cart-card {
+    display: flex;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 600px;
+}
+
+/* The product image */
+.cart-card .card-img {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.cart-card .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* The right side of the card(info) */
+.cart-card .card-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Product details */
+.card-info .item-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.card-info .item-qty-price {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.card-info .item-sent {
+    font-size: 16px;
+    color: #555;
+}
+
+/* vertical divider */
+.vertical-divider {
+    width: 2px;
+    background-color: #000;
+    margin: 0 20px;
+}
+
+/* Payment region */
+.payment-section {
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Pay with part */
+.pay-with {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.pay-with .bar {
+    flex: 1;
+    height: 1px;
+    background-color: #000;
+}
+
+.pay-with .pay-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Apple Pay  */
+.apple-pay-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 16px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.apple-pay-btn:hover {
+    background-color: #333;
+}
+
+.apple-icon {
     width: 24px;
     height: 24px;
-    object-fit: contain;
+    margin-left: 12px;
+}
+
+/* “or” text */
+.or-text {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 16px;
+}
+
+/* Paypal, etc */
+.card-logos {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background-color: #3388ee;
+    padding: 8px 16px;
+    border-radius: 4px;
+    margin-bottom: 32px;
+}
+
+.card-logos img {
+    height: 32px;
+    width: auto;
+}
+
+/* The total price */
+.total-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: auto;
+}
+
+.total-row .total-label {
+    color: #000;
+}
+
+.total-row .total-amount {
+    color: #e74c3c;
 }

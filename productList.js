@@ -92,3 +92,43 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 });
+
+/* “Buy Now” button */
+document.addEventListener("DOMContentLoaded", function() {
+        // First bind the few specified class="buy-now" button
+        document.querySelectorAll(".buy-now").forEach(function(btn) {
+            btn.addEventListener("click", function(event) {
+                // Prevent the card from going to other pages (product page)
+                event.stopPropagation();
+  
+                // Get the data-id of the currently clicked button, which must correspond to the key stored in the shopping cart
+                const productId = btn.getAttribute("data-id"); // "uber20off" or "maccaMeal"
+                if (!productId) return;
+  
+                // Read the shopping cart object in localStorage, and use an empty object if it does not exist
+                let shoppingCart = JSON.parse(localStorage.getItem("shoppingCart")) || {};
+                // The previous quantity of this item (0 if none)
+                const prevQty = parseInt(shoppingCart[productId], 10) || 0;
+  
+                if (prevQty === 0) {
+                    // Set the quantity to 1 in the shopping cart
+                    shoppingCart[productId] = 1;
+                    localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
+  
+                    // Update cartCount = original + 1
+                    const prevCartCount = parseInt(localStorage.getItem("cartCount"), 10) || 0;
+                    const newCartCount = prevCartCount + 1;
+                    localStorage.setItem("cartCount", newCartCount);
+                    // If the corner mark is displayed in real time on the page, DOM can be updated here
+                    const headerCartCountSpan = document.getElementById("cartCount");
+                    if (headerCartCountSpan) {
+                        headerCartCountSpan.textContent = newCartCount;
+                    }
+                }
+  
+            // Go to the checkout page
+            window.location.href = "checkOut.html";
+        });
+    });
+});
+  

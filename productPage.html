@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product page</title>
     <link rel="stylesheet" href="productPage.css">
 </head>
+
 <body>
     <header class="site-header">
         <div class="left-side">
@@ -29,26 +31,156 @@
             <div class="person-region">
                 <img src="sources/person-svgrepo-com.svg" class="person-icon" />
             </div>
-            <div class="cart-region">
+            <div class="cart-region" id="headerCart">
                 <img src="sources/cart-shopping-svgrepo-com.svg" class="cart-icon" />
                 <span class="cart-count" id="cartCount">0</span>
             </div>
         </div>
     </header>
 
-    <div class="product-section">
-        <div class="product-image">
-            <img src="sources/product_mega.png" alt="Mega Meal">
-        </div>
-        <div class="product-details">
-            <h2 class="product-title">Macca Meal</h2>
-            <div class="rating">★★★★☆</div>
-            <div class="stock">In stock</div>
-            <div class="price">$2.99</div>
-            <button class="add-to-cart">Add to Cart</button>
-        </div>
-    </div>
-    
+    <nav class="nav-links">
+        <a href="index.html">Home</a> /
+        <a href="productList.html">Coupon</a>
+    </nav>
+
+    <main class="page-wrapper">
+        <!-- Left side: the image of the product -->
+        <section class="product-image">
+            <img src="sources/product_mega.png" alt="Mega Meal" />
+        </section>
+
+        <!-- Middle product info -->
+        <section class="product-details">
+            <h2 class="product-title">Macca Meal Coupon</h2>
+
+            <div class="price">
+                $2.99
+                <span class="per-each">per each</span>
+            </div>
+
+            <div class="date-ava">Date: available by 2025-05-03</div>
+
+            <div class="rating-text">
+                Overall rate:
+                <span class="rating-stars">★ ★ ★ ★</span>
+            </div>
+
+            <p class="stock" data-stock="10">
+                <span class="stock-dot">●</span>
+                Stock: 10 Left
+            </p>
+
+            <button class="buy-now-button">Buy Now</button>
+
+            <div class="cart-qty-wrapper">
+                <button class="add-to-cart">Add to Cart</button>
+                <div class="quantity-selector">
+                    <button class="qty-btn minus">−</button>
+                    <span class="qty-number">1</span>
+                    <button class="qty-btn plus">＋</button>
+                </div>
+            </div>
+
+            <div class="description-wrapper">
+                <p class="de-title">Description</p>
+                <div class="de-content">
+                    This coupon is for a two-person meal of McDonald's, which includes a Big MAC
+                    burger, a cheese beef burger, a drink, four-piece chicken nuggets and a large
+                    chips. It costs 31.99...
+                </div>
+            </div>
+        </section>
+
+        <!-- Right side：History Deals -->
+        <aside class="history-deals">
+            <h2 class="history-title">History Deals</h2>
+
+            <!-- card 1 -->
+            <div class="history-item">
+                <div class="avatar-block">
+                    <div class="avatar">
+                        <img src="sources/side-person-svgrepo-com.svg" alt="User 1345" />
+                    </div>
+                    <div class="username">
+                        <strong>User 1345</strong>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="info-row">
+                        <span><strong>Bought:</strong> 1 hour ago</span>
+                    </div>
+                    <div class="info-row">
+                        <span><strong>rate:</strong>
+                            <span class="side-stars ssgreen">★ ★ ★ ★</span>
+                        </span>
+                    </div>
+                    <div class="info-row">
+                        <span><strong>Comment:</strong>
+                            <a href="#" class="comment-link">Click here to see</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <hr class="divider" />
+
+            <!-- card 2 -->
+            <div class="history-item">
+                <div class="avatar-block">
+                    <div class="avatar">
+                        <img src="sources/side-person-svgrepo-com.svg" alt="User 2345" />
+                    </div>
+                    <div class="username">
+                        <strong>User 2345</strong>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="info-row">
+                        <span><strong>Bought:</strong> 1 hour ago</span>
+                    </div>
+                    <div class="info-row">
+                        <span><strong>rate:</strong>
+                            <span class="side-stars ssgreen">★ ★ ★ ★</span>
+                        </span>
+                    </div>
+
+                    <div class="info-row">
+                        <span><strong>Comment:</strong>
+                            <a href="#" class="comment-link">Click here to see</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <hr class="divider" />
+
+            <!-- card 3 -->
+            <div class="history-item">
+                <div class="avatar-block">
+                    <div class="avatar">
+                        <img src="sources/side-person-svgrepo-com.svg" alt="User 1117" />
+                    </div>
+                    <div class="username">
+                        <strong>User 1117</strong>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="info-row">
+                        <span><strong>Bought:</strong> 2 hours ago</span>
+                    </div>
+                    <div class="info-row">
+                        <span><strong>rate:</strong>
+                            <span class="side-stars ssred">★ ★ </span>
+                        </span>
+                    </div>
+                    <div class="info-row">
+                        <span><strong>Comment:</strong>
+                            <a href="#" class="comment-link">Click here to see</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <hr class="divider" />
+        </aside>
+    </main>
 
     <!--The dark overplay setting while sidebar showing-->
     <div class="overlay" id="overlay"></div>
@@ -73,4 +205,5 @@
 
     <script src="productPage.js"></script>
 </body>
+
 </html>

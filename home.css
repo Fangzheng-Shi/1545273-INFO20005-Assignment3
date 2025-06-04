@@ -189,7 +189,7 @@ header.site-header {
     border-radius: 4px;
     font-weight: bold;
     font-size: 21px;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     text-decoration: none;
     cursor: pointer;
 }
@@ -199,7 +199,8 @@ header.site-header {
     height: auto;
     margin-right: 10px;
     margin-top: 5px;
-    filter: brightness(0) invert(1); /* Make the icons white */
+    filter: brightness(0) invert(1);
+    /* Make the icons white */
 }
 
 .main-sections .section:hover {
@@ -254,6 +255,7 @@ header.site-header {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 30px;
+    row: 20px;
     width: 520px;
     background: rgba(255, 255, 255, 0.9);
     padding: 24px;
@@ -301,6 +303,29 @@ header.site-header {
     color: #F4C150;
 }
 
+/* load more button  */
+.load-more-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* the button itself */
+.load-more-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 12px 32px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.load-more-btn:hover {
+    opacity: 0.8;
+}
+
 /* Overplay */
 .overlay,
 .side-bar-list {
@@ -337,23 +362,21 @@ header.site-header {
     left: 0;
     z-index: 20;
     flex-direction: column;
-    justify-content: flex-start;
+
 }
 
 .side-bar-list ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 150px 0 0 0;
+    width: 100%;
 }
 
 .side-bar-list li {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 20px 0;
+    justify-content: flex-start;
+    padding: 12px 0 12px 30px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 100%;
@@ -383,15 +406,17 @@ header.site-header {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 23px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    color: #333;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    gap: 12px;
+    padding-left: 30px;
+    color: #3291df;
 }
 
 .back-btn button img {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     object-fit: contain;
 }

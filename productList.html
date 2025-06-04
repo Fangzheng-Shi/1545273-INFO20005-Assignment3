@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    <!-- Three buttons -->
+    <!-- Three main buttons -->
     <div class="filter-buttons">
         <div class="button btn1">
             <p class="button-text">Deals</p>
@@ -59,6 +59,8 @@
         <div class="button btn3" id="filterBtn">
             <p class="button-text">Filter</p>
             <span class="filter-icon"><img src="sources/filter-svgrepo-com.svg" /></span>
+
+            <!-- The filter menu -->
             <div class="filter-dropdown" id="filterDropdown">
                 <div class="dropdown-item">Most Purchase</div>
                 <div class="dropdown-item">Cheapest Ones</div>
@@ -71,6 +73,7 @@
     </div>
 
     <div class="container">
+        <!-- Cards are seperated and made in a unified typesetting -->
         <div class="card">
             <div class="card-content">
                 <div class="card-text">
@@ -91,7 +94,7 @@
                     <img src="sources/product_uber.png" alt="Uber Coupon" />
                     <div class="btn-group vertical">
                         <!-- Prevent add the buttons to open the product's page -->
-                        <button onclick="event.stopPropagation();">Buy Now</button>
+                        <button class="buy-now" data-id="uber20off" onclick="event.stopPropagation();">Buy Now</button>
                         <button class="add-to-cart" data-id="uber20off" onclick="event.stopPropagation();">Add to cart</button>
                     </div>
                 </div>
@@ -103,7 +106,6 @@
                 <div class="card-text">
                     <h2 class="card-title">McSmart Meal Coupon</h2>
                     <p class="price"><span class="price-highlight">$2.99</span> per each</p>
-                    <!-- <p class="rating">Overall Rate: ★★★★☆</p> -->
                     <p class="rating">
                         Overall Rate:
                         <span class="rating-stars sgreen">★★★★★</span>
@@ -124,26 +126,26 @@
             </div>
         </div>
 
-        <div class="card"  onclick="window.location.href='productPage.html?id=maccaMeal'">
+        <!-- This onclick below allows only this product's card can go to product page -->
+        <div class="card"  onclick="window.location.href='productPage.html?id=maccaMeal'"> 
             <div class="card-content">
                 <div class="card-text">
                     <h2 class="card-title">Macca Meal Coupon</h2>
                     <p class="price"><span class="price-highlight">$2.99</span> per each</p>
-                    <!-- <p class="rating">Overall Rate: ★★★★★</p> -->
                     <p class="rating">
                         Overall Rate:
                         <span class="rating-stars sgreen">★★★★★</span>
                     </p>
                     <p class="date">Date: <u>before 2025-10-11</u></p>
-                    <p class="stock green">
-                        <span class="stock-dot green"></span>
-                        Stock: Sufficient
+                    <p class="stock red">
+                        <span class="stock-dot red"></span>
+                        Stock: 10 Left
                     </p>
                 </div>
                 <div class="card-img">
                     <img src="sources/product_mega.png" alt="McSmart Meal" />
                     <div class="btn-group vertical">
-                        <button onclick="event.stopPropagation();">Buy Now</button>
+                        <button class="buy-now" data-id="maccaMeal" onclick="event.stopPropagation();">Buy Now</button>
                         <button class="add-to-cart" data-id="maccaMeal" onclick="event.stopPropagation();">Add to cart</button>
                     </div>
                 </div>
@@ -276,6 +278,7 @@
         </div>
     </div>
 
+    <!-- Unclickable load-more button -->
     <div class="load-more-container">
         <button class="load-more-button">Load more</button>
     </div>

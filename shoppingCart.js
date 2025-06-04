@@ -1,3 +1,21 @@
+/* Open side bar */
+function openSideBar() {
+    document.getElementById("sidebar").classList.add("visible");
+    document.getElementById("overlay").classList.add("visible");
+}
+
+/* Close side bar */
+document.getElementById("closeSidebar").addEventListener("click", function() {
+    document.getElementById("sidebar").classList.remove("visible");
+    document.getElementById("overlay").classList.remove("visible");
+});
+
+// click the overplay area to close sidebar
+document.getElementById("overlay").addEventListener("click", function () {
+    document.getElementById("sidebar").classList.remove("visible");
+    document.getElementById("overlay").classList.remove("visible");
+});
+
 document.addEventListener("DOMContentLoaded", function() {
     const cartCountSpan = document.getElementById("cartCount");
     // read the number of cart number from cartCount
@@ -19,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
             id: "maccaMeal",
             name: "Macca Meal Coupon",
             price: 2.99,
-            imgSrc: "sources/product_macca.png"
+            imgSrc: "sources/product_mega.png"
         }
     };
   
@@ -122,7 +140,19 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
   
-    // render when the page is loaded
+    // first time render
     renderCartItems();
+
+    // Go to checkOut page when click the button
+    const buyNowBtn = document.querySelector(".buy-now-button");
+    if (buyNowBtn) {
+        buyNowBtn.addEventListener("click", function() {
+            // Double check whether shoppingCart has a product satisfying qty > 0
+            const hasItems = Object.values(shoppingCart).some(qty => parseInt(qty, 10) > 0);
+            if (hasItems) {
+                window.location.href = "checkOut.html";
+            }
+        });
+    }
 });
 

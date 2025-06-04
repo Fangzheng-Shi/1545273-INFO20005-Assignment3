@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout page</title>
+    <link rel="stylesheet" href="checkOut.css" />
 </head>
 
 <body>
@@ -30,12 +31,80 @@
             <div class="person-region">
                 <img src="sources/person-svgrepo-com.svg" class="person-icon" />
             </div>
-            <div class="cart-region">
+            <div class="cart-region" id="headerCart">
                 <img src="sources/cart-shopping-svgrepo-com.svg" class="cart-icon" />
                 <span class="cart-count" id="cartCount">0</span>
             </div>
         </div>
     </header>
+
+    <nav class="nav-links">
+        <a href="index.html">Home</a> /
+        <a href="productList.html">Coupon</a>
+    </nav>
+
+    <main class="checkout-wrapper">
+        <!-- items —— -->
+        <section class="cart-items">
+            <!-- JS dynamically insert items here -->
+            <!-- If it is empty in the shopping cart, it will tell users that it is empty -->
+        </section>
+
+        <!-- Vertical divider -->
+        <div class="vertical-divider"></div>
+
+        <!-- Payment details and total price shown -->
+        <section class="payment-section">
+            <div class="pay-with">
+                <div class="bar"></div>
+                <span class="pay-title">Pay with</span>
+                <div class="bar"></div>
+            </div>
+
+            <!-- Apple Pay button -->
+            <button class="apple-pay-btn">
+                APPLE PAY <img src="sources/apple-logo.png" alt="Apple Pay" class="apple-icon" />
+            </button>
+
+            <div class="or-text">or</div>
+
+            <!-- Payment methods area -->
+            <div class="card-logos">
+                <img src="sources/visa-logo.png" alt="VISA" />
+                <img src="sources/mastercard-logo.png" alt="MasterCard" />
+                <img src="sources/paypal-logo.png" alt="PayPal" />
+            </div>
+
+            <!-- The total price -->
+            <div class="total-row">
+                <span class="total-label">Total:</span>
+                <span class="total-amount" id="totalAmount">0</span>
+            </div>
+        </section>
+    </main>
+
+
+    <!--The dark overplay setting while sidebar showing-->
+    <div class="overlay" id="overlay"></div>
+
+    <!--Side bar-->
+    <div class="side-bar-list" id="sidebar">
+        <ul>
+            <li><span class="icon">▶</span> Notification</li>
+            <li><span class="icon">▶</span> About Us</li>
+            <li><span class="icon">▶</span> Log in</li>
+            <li><span class="icon">▶</span> Sign up</li>
+            <li><span class="icon">▶</span> Settings</li>
+            <li><span class="icon">▶</span> Report Problems</li>
+        </ul>
+        <div class="back-btn">
+            <button id="closeSidebar">
+                <img src="sources/forward-circle-fill-svgrepo-com.svg" alt="closeSidebar">
+                Close
+            </button>
+        </div>
+    </div>
+    <script src="checkOut.js"></script>
 </body>
 
 </html>
