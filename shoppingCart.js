@@ -18,6 +18,7 @@ document.getElementById("overlay").addEventListener("click", function () {
 
 document.addEventListener("DOMContentLoaded", function() {
     const cartCountSpan = document.getElementById("cartCount");
+    
     // read the number of cart number from cartCount
     const savedCount = parseInt(localStorage.getItem("cartCount")) || 0;
     cartCountSpan.textContent = savedCount;

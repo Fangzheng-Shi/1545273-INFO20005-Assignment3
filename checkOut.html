@@ -55,24 +55,26 @@
 
         <!-- Payment details and total price shown -->
         <section class="payment-section">
-            <div class="pay-with">
-                <div class="bar"></div>
-                <span class="pay-title">Pay with</span>
-                <div class="bar"></div>
-            </div>
+            <div class="payment-options">
+                <div class="pay-with">
+                    <div class="bar"></div>
+                    <span class="pay-title">Pay with</span>
+                    <div class="bar"></div>
+                </div>
 
-            <!-- Apple Pay button -->
-            <button class="apple-pay-btn">
-                APPLE PAY <img src="sources/apple-logo.png" alt="Apple Pay" class="apple-icon" />
-            </button>
+                <!-- Apple Pay button -->
+                <button class="apple-pay-btn">
+                    APPLE PAY <img src="sources/apple-173-svgrepo-com.svg" alt="Apple Pay" class="apple-icon" />
+                </button>
 
-            <div class="or-text">or</div>
+                <div class="or-text">or</div>
 
-            <!-- Payment methods area -->
-            <div class="card-logos">
-                <img src="sources/visa-logo.png" alt="VISA" />
-                <img src="sources/mastercard-logo.png" alt="MasterCard" />
-                <img src="sources/paypal-logo.png" alt="PayPal" />
+                <!-- Payment methods area -->
+                <div class="card-logos">
+                    <img src="sources/visa-svgrepo-com.svg" alt="VISA" />
+                    <img src="sources/mastercard-svgrepo-com.svg" alt="MasterCard" />
+                    <img src="sources/paypal-140-svgrepo-com.svg" alt="PayPal" class="paypal-icon" />
+                </div>
             </div>
 
             <!-- The total price -->
@@ -104,6 +106,63 @@
             </button>
         </div>
     </div>
+
+    <!-- APPLE PAY & VISA... Successful payment's pop-up -->
+    <div id="successOverlay" class="payment-success-overlay">
+        <div class="payment-success-modal">
+            <div class="success-header">
+                <img src="sources/success-svgrepo-com.svg" alt="Success Icon" class="success-icon" />
+                <h2 class="success-title">Success!</h2>
+            </div>
+            <p class="success-msg">
+                Please check your email. The coupon will be sent in 24 hours.
+                If you have further problems, please report problems in the side bar.
+            </p>
+            <a href="index.html" class="back-home-link">Back to home</a>
+        </div>
+    </div>
+
+    <div id="paymentOverlay" class="payment-modal-overlay">
+        <div class="payment-modal">
+            <!-- The top yellow PayPal button -->
+            <button class="paypal-exp-btn">
+                <img src="sources/paypal-140-svgrepo-com.svg" alt="PayPal" />
+            </button>
+
+            <div class="payment-or">or</div>
+
+            <div class="payment-divider"></div>
+
+            <!-- card info form -->
+            <form id="cardForm" class="card-form">
+                <!-- Card Number -->
+                <label for="cardNumber">Card Number</label>
+                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" required>
+
+                <!-- Expiration Date and CVV -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expDate">Expiration Date (MM/YY)</label>
+                        <input type="text" id="expDate" name="expDate" placeholder="MM/YY" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" name="cvv" placeholder="123" required>
+                    </div>
+                </div>
+
+                <!-- Postal Code -->
+                <label for="postalCode">Postal Code</label>
+                <input type="text" id="postalCode" name="postalCode" placeholder="12345" required>
+
+                <!-- “CheckOut” button -->
+                <button type="button" id="cardCheckoutBtn" class="card-checkout-btn">
+                    CheckOut
+                </button>
+            </form>
+        </div>
+    </div>
+
     <script src="checkOut.js"></script>
 </body>
 

@@ -5,130 +5,75 @@ function openSideBar() {
 }
 
 /* Close side bar */
-document.getElementById("closeSidebar").addEventListener("click", function() {
+document.getElementById("closeSidebar").addEventListener("click", () => {
     document.getElementById("sidebar").classList.remove("visible");
     document.getElementById("overlay").classList.remove("visible");
 });
 
-// click the overplay area to close sidebar
-document.getElementById("overlay").addEventListener("click", function () {
+/* Overlay */
+document.getElementById("overlay").addEventListener("click", () => {
     document.getElementById("sidebar").classList.remove("visible");
     document.getElementById("overlay").classList.remove("visible");
 });
 
-// To change the number when click "adding to cart"
-document.addEventListener("DOMContentLoaded", function() {
-
+/* Shopping cart badge synchronization */
+document.addEventListener("DOMContentLoaded", () => {
     const cartCountSpan = document.getElementById("cartCount");
-  
-    // Initialization：read cartCount data from localStorage
-    const savedCount = parseInt(localStorage.getItem("cartCount")) || 0;
-    cartCountSpan.textContent = savedCount;
-  
-    // Initialization：if localStorage.shoppingCart is empty，assign it to a empty set
-    const shoppingCartObj = JSON.parse(localStorage.getItem("shoppingCart")) || {};
-  
-    // Bind all .add-to-cart buttons
-    const addButtons = document.querySelectorAll(".add-to-cart");
-    addButtons.forEach(function(btn) {
-        btn.addEventListener("click", function(event) {
-            event.stopPropagation();
-  
-            // Update numbers in cartCount 
-            const currentCount = parseInt(cartCountSpan.textContent) || 0;
-            const newCount = currentCount + 1;
-            cartCountSpan.textContent = newCount;
+    cartCountSpan.textContent = parseInt(localStorage.getItem("cartCount")) || 0;
+
+    /* “Add to cart” button, maintain the original shopping cart logic */
+    const cartObj = JSON.parse(localStorage.getItem("shoppingCart")) || {};
+    document.querySelectorAll(".add-to-cart").forEach(btn => {
+        btn.addEventListener("click", e => {
+            e.stopPropagation();
+            const id = btn.dataset.id;
+            cartObj[id] = (parseInt(cartObj[id]) || 0) + 1;
+            localStorage.setItem("shoppingCart", JSON.stringify(cartObj));
+
+            const newCount = (parseInt(localStorage.getItem("cartCount")) || 0) + 1;
             localStorage.setItem("cartCount", newCount);
-  
-            // Update the specific product ID and show its amount in shoppingCartObj
-            const prodId = this.dataset.id; // "uber20off" or "maccaMeal"
-  
-            // If the prodId does not exist，default 0，then +1
-            const prevQty = parseInt(shoppingCartObj[prodId]) || 0;
-            shoppingCartObj[prodId] = prevQty + 1;
-  
-            // store in localStorage
-            localStorage.setItem("shoppingCart", JSON.stringify(shoppingCartObj));
+            cartCountSpan.textContent = newCount;
         });
     });
-  
-    // Bind "click the shopping cart icon in the head" to jump to the shopping cart page
+
+    /* Shopping cart icon to Shopping cart page */
     const headerCart = document.getElementById("headerCart");
     if (headerCart) {
         headerCart.style.cursor = "pointer";
-        headerCart.addEventListener("click", function() {
-            window.location.href = "shoppingCart.html";
-        });
+        headerCart.addEventListener("click", () => (window.location.href = "shoppingCart.html"));
     }
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    // First get the Filter button and menu
-    const filterBtn = document.getElementById("filterBtn");
-    const dropdown = document.getElementById("filterDropdown");
+/* Buy Now" only settles the current item */
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".buy-now").forEach(btn => {
+        btn.addEventListener("click", e => {
+            e.stopPropagation();
+            const productId = btn.getAttribute("data-id");
+            if (!productId) return;
 
-    if (filterBtn && dropdown) {
-        // When click the button：switch class to .show in css
-        filterBtn.addEventListener("click", function(event) {
-            event.stopPropagation(); 
-            // switch the class name of show
-            dropdown.classList.toggle("show");
-        });
+            /* Write the current product ID into buyNowItem, indicating the "buy now" process */
+            localStorage.setItem("buyNowItem", productId);
 
-        // Click anywhere to close the menu
-        document.addEventListener("click", function() {
-            // if.show exists，then remove it
-            if (dropdown.classList.contains("show")) {
-                dropdown.classList.remove("show");
-            }
-        });
-
-        // When clicking on an item inside a menu: you can prevent event bubbling
-        dropdown.addEventListener("click", function(event) {
-            event.stopPropagation();
-            // const selected = event.target.innerText;
-            // console.log("click：", selected);
-            dropdown.classList.remove("show"); // Click the filter choices and the menu closes
-        });
-    }
-});
-
-/* “Buy Now” button */
-document.addEventListener("DOMContentLoaded", function() {
-        // First bind the few specified class="buy-now" button
-        document.querySelectorAll(".buy-now").forEach(function(btn) {
-            btn.addEventListener("click", function(event) {
-                // Prevent the card from going to other pages (product page)
-                event.stopPropagation();
-  
-                // Get the data-id of the currently clicked button, which must correspond to the key stored in the shopping cart
-                const productId = btn.getAttribute("data-id"); // "uber20off" or "maccaMeal"
-                if (!productId) return;
-  
-                // Read the shopping cart object in localStorage, and use an empty object if it does not exist
-                let shoppingCart = JSON.parse(localStorage.getItem("shoppingCart")) || {};
-                // The previous quantity of this item (0 if none)
-                const prevQty = parseInt(shoppingCart[productId], 10) || 0;
-  
-                if (prevQty === 0) {
-                    // Set the quantity to 1 in the shopping cart
-                    shoppingCart[productId] = 1;
-                    localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
-  
-                    // Update cartCount = original + 1
-                    const prevCartCount = parseInt(localStorage.getItem("cartCount"), 10) || 0;
-                    const newCartCount = prevCartCount + 1;
-                    localStorage.setItem("cartCount", newCartCount);
-                    // If the corner mark is displayed in real time on the page, DOM can be updated here
-                    const headerCartCountSpan = document.getElementById("cartCount");
-                    if (headerCartCountSpan) {
-                        headerCartCountSpan.textContent = newCartCount;
-                    }
-                }
-  
-            // Go to the checkout page
+            /* Jump directly to the checkout page (do not change the shopping cart content, nor update cartCount */
             window.location.href = "checkOut.html";
         });
     });
 });
-  
+
+/* Filter drop-down menu, keep the original logic */
+document.addEventListener("DOMContentLoaded", () => {
+    const filterBtn   = document.getElementById("filterBtn");
+    const dropdown    = document.getElementById("filterDropdown");
+    if (!filterBtn || !dropdown) return;
+
+    filterBtn.addEventListener("click", e => {
+        e.stopPropagation();
+        dropdown.classList.toggle("show");
+    });
+    document.addEventListener("click", () => dropdown.classList.remove("show"));
+    dropdown.addEventListener("click", e => {
+        e.stopPropagation();
+        dropdown.classList.remove("show");
+    });
+});
