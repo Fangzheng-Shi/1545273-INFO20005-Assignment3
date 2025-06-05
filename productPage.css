@@ -235,7 +235,7 @@ a.logo {
 /* the main part layout for this page */
 .page-wrapper {
     display: flex;
-    gap: 40px;
+    /* gap: 40px; */
     margin: 20px;
 }
 
@@ -407,7 +407,6 @@ a.logo {
 .history-deals {
     width: 300px;
     padding-left: 20px;
-    border-left: 2px solid #000;
 }
 
 .history-title {
@@ -450,7 +449,7 @@ a.logo {
     color: #000;
     white-space: nowrap;
     text-decoration: underline;
-  }
+}
 
 .history-item .info {
     display: flex;
@@ -487,4 +486,480 @@ a.logo {
     border: none;
     border-top: 1px solid #e0e0e0;
     margin: 8px 0 16px;
+}
+
+/* The iPhone 12 Pro style settings are below */
+
+@media (max-width: 390px) {
+
+    header.site-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        height: auto;
+        position: relative;
+        background-color: #F2E205;
+        z-index: 1;
+        height: 100px;
+    }
+
+    .tag-icon {
+        display: none;
+    }
+
+    .site-header .logo-text1,
+    .site-header .logo-text2 {
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    .site-header #burger-menu {
+        position: relative;
+        left: -15px;
+        top: 14px;
+        width: 22px;
+        height: auto;
+    }
+
+    .site-header .logo-text1,
+    .site-header .logo-text2 {
+        font-size: 28px;
+        line-height: 1;
+        margin-top: 10px;
+    }
+
+    .site-header .logo-text1 {
+        padding: 10px 8px;
+        border-radius: 8px;
+    }
+
+    .site-header #burger-menu,
+    .site-header .search-icon,
+    .site-header .person-icon,
+    .site-header .cart-icon {
+        width: 22px;
+        height: auto;
+    }
+
+    .site-header .person-region,
+    .site-header .cart-region {
+        margin-top: 8px;
+        width: 22px;
+        height: auto;
+    }
+
+    .site-header .logo {
+        position: relative;
+        left: -10px;
+        top: 4px;
+    }
+
+    /* no search bar needed here */
+    .site-header .search-region {
+        display: none;
+    }
+
+    .site-header .search-region input {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .site-header .right-side {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 32px;
+        position: static !important;
+        gap: 10px;
+    }
+
+    .site-header .left-side {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .site-header .search-region,
+    .site-header .person-region,
+    .site-header .cart-region {
+        margin-top: 0;
+    }
+
+    .site-header .person-region,
+    .site-header .cart-region {
+        cursor: pointer;
+    }
+
+    .side-bar-list,
+    .overlay {
+        display: none;
+    }
+
+    .side-bar-list {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 66.666vw;
+        max-width: 260px;
+        height: 100vh;
+        background: #FFF678;
+        transform: translateX(-100%);
+        transition: transform .3s ease;
+        z-index: 30;
+        flex-direction: column;
+        overflow-y: auto;
+        padding: 40px 20px 20px 20px;
+    }
+
+    .side-bar-list.visible {
+        display: flex !important;
+        transform: translateX(0);
+    }
+
+    /* The overlay layer */
+    .overlay {
+        position: fixed;
+        left: 66.666vw !important;
+        width: 33.334vw !important;
+        right: auto !important;
+        max-width: 130px;
+        height: 100vh;
+        background: rgba(0, 0, 0, .4);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s ease;
+        z-index: 20;
+    }
+
+    .overlay.visible {
+        display: block;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .side-bar-list ul {
+        margin-top: 110px;
+    }
+
+    .side-bar-list li {
+        font-size: 18px;
+        padding: 8px 0 8px 18px;
+    }
+
+    .side-bar-list .icon {
+        font-size: 20px;
+        margin-right: 8px;
+    }
+
+    .back-btn {
+        margin-top: 24px;
+    }
+
+    .back-btn button {
+        font-size: 18px;
+        gap: 6px;
+        padding-left: 18px;
+    }
+
+    .back-btn img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .site-header .search-region {
+        display: none;
+    }
+
+    /* The main content of the product page */
+    .page-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: auto;
+        gap: 16px;
+        margin: 0;
+        padding: 0 16px;
+    }
+
+    .product-title,
+    .product-image,
+    .description-wrapper,
+    .buy-now-button,
+    .cart-qty-wrapper,
+    .history-deals {
+        grid-column: 1 / 3;
+    }
+
+    /* Make product-details "content" a direct child element of page-wrapper */
+    .product-details {
+        display: contents;
+    }
+
+    /* maintain “Home / Coupon” links under the header */
+    .nav-links {
+        display: block;
+        width: 100%;
+        margin: 12px 16px;
+        font-size: 16px;
+        margin-bottom: 4px !important;
+    }
+
+    .nav-links a {
+        font-size: 16px;
+        text-decoration: none;
+        color: #3366cc;
+    }
+
+    .nav-links a:hover {
+        text-decoration: underline;
+    }
+
+    .product-title {
+        /* Use order to recreate the typesetting and orders of each DOM */
+        order: 1;
+        width: calc(100% - 32px);
+        font-size: 22px;
+        font-weight: bold;
+        color: #000;
+        text-align: center;
+        margin: 4px 18px 4px !important;
+        position: relative;
+    }
+
+    /* Black line decoration */
+    .product-title::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 16px;
+        right: 16px;
+        height: 1px;
+        background-color: #000;
+        transform: translateY(-8px);
+    }
+
+    /* Black line decoration */
+    .product-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 16px;
+        right: 16px;
+        height: 1px;
+        background-color: #000;
+        transform: translateY(8px);
+    }
+
+    .product-title::before,
+    .product-title::after {
+        content: none !important;
+    }
+
+    .product-image {
+        order: 2;
+        width: 100%;
+        text-align: center;
+        margin-top: 8px;
+    }
+
+    .product-image img {
+        margin-top: 4px;
+        margin-bottom: 12px;
+        width: 100%;
+        max-width: 300px;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+
+    /* Let start and stock change position by using grid */
+    .stock {
+        order: 3;
+        grid-row: 4;
+        grid-column: 1;
+        justify-self: start;
+        font-size: 16px;
+        font-weight: bold;
+        color: #e74c3c;
+        margin-left: 22px;
+        margin-top: -10px;
+    }
+
+    .stock-dot {
+        font-size: 16px;
+        margin-right: 6px;
+    }
+
+    .rating-text {
+        order: 3;
+        grid-column: 2;
+        justify-self: end;
+        font-size: 0;
+        color: transparent;
+        margin-top: -15px;
+    }
+
+    .rating-text .rating-stars {
+        font-size: 18px;
+        color: #27ae60;
+        margin-right: 35px;
+    }
+
+    /* Clear the float so that the next line 
+       of content starts normally from the bottom */
+    .product-details::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    /* Date available and price are the same as the stars and stock */
+    .date-ava {
+        order: 4;
+        grid-row: 5;
+        grid-column: 1;
+        font-size: 13px;
+        font-weight: bold;
+        color: #000;
+        margin: 10px 0 0 24px;
+        text-decoration: underline;
+    }
+
+    .price {
+        order: 4;
+        grid-row: 5;
+        grid-column: 2;
+        font-size: 36px;
+        color: #e74c3c;
+        margin: -8px 0 0 20px;
+    }
+
+    .per-each {
+        font-size: 11px !important;
+        font-weight: bold;
+        color: #555;
+        margin: 0 !important;
+    }
+
+    /* clear float again to make description area work */
+    .product-details::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+
+    /* Description area */
+    .description-wrapper {
+        order: 5;
+        width: calc(100% - 32px);
+        margin: 0 16px 0 16px;
+    }
+
+    .description-wrapper .de-title {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .description-wrapper .de-content {
+        font-size: 14px;
+        line-height: 1.4;
+        color: #333;
+    }
+
+    /* Add to Cart + qty area */
+    .cart-qty-wrapper {
+        order: 6;
+        width: calc(100% - 32px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 16px 0 16px;
+    }
+
+    .quantity-selector {
+        border: 2px solid #000;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .add-to-cart-button {
+        font-size: 16px;
+        padding: 8px 12px;
+        min-width: 120px;
+    }
+
+    .add-to-cart {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        padding: 4px 12px;
+        border: 2px solid #000;
+        min-width: 80px;
+        background: none;
+        transition: background-color 0.2s ease;
+        height: 36px;
+    }
+
+    .add-to-cart:hover {
+        background-color: #f2f2f2;
+    }
+
+    .qty-btn {
+        font-size: 18px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .qty-number {
+        font-size: 16px;
+        margin: 0 8px;
+    }
+
+    /* Buy Now Button */
+    .buy-now-button {
+        order: 7;
+        width: calc(100% - 32px);
+        max-width: 330px;
+        margin: 0 16px 0 16px;
+        font-size: 18px;
+        padding: 10px 0;
+    }
+
+    /* History Deals is the last in order */
+    .history-deals {
+        order: 8;
+        width: calc(100% - 32px);
+        margin: 24px 16px 0;
+    }
+
+    .history-deals .history-title {
+        font-size: 18px;
+        margin-bottom: 12px;
+        text-align: center;
+    }
+
+    .history-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 16px;
+        padding: 0 16px;
+    }
+
+    .avatar {
+        width: 48px;
+        height: 48px;
+    }
+
+    .username {
+        font-size: 14px;
+        margin-top: 4px;
+    }
+
+    .info-row {
+        font-size: 14px;
+        margin-bottom: 4px;
+    }
 }

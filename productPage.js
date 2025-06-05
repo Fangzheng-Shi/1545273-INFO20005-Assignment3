@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const newQty  = prevQty + currentQty;
       shoppingCart[productId] = newQty;
       localStorage.setItem("shoppingCart", JSON.stringify(shoppingCart));
-å
+      
       const prevCartCount = parseInt(localStorage.getItem("cartCount")) || 0;
       const newCartCount  = prevCartCount + currentQty;
       localStorage.setItem("cartCount", newCartCount);

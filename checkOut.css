@@ -293,6 +293,7 @@ a.logo {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 5px;
 }
 
 /* Product details */
@@ -486,8 +487,8 @@ a.logo {
 .payment-success-modal .success-title {
     font-size: 28px;
     font-weight: bold;
-    color: #333;s
-    margin: 0;
+    color: #333;
+    s margin: 0;
     line-height: 40px;
 }
 
@@ -599,6 +600,7 @@ a.logo {
     margin-bottom: 12px;
     outline: none;
 }
+
 .payment-modal .card-form input:focus {
     border-color: #3366cc;
 }
@@ -609,6 +611,7 @@ a.logo {
     gap: 12px;
     margin-bottom: 12px;
 }
+
 .payment-modal .form-group {
     flex: 1;
     display: flex;
@@ -628,6 +631,342 @@ a.logo {
     margin-top: 8px;
     transition: background-color 0.2s ease;
 }
+
 .payment-modal .card-checkout-btn:hover {
     background-color: #274b8e;
+}
+
+/* The iPhone 12 Pro style settings are below */
+
+@media (max-width: 390px) {
+
+    header.site-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        height: auto;
+        position: relative;
+        background-color: #F2E205;
+        z-index: 1;
+        height: 100px;
+    }
+
+    .tag-icon {
+        display: none;
+    }
+
+    .site-header .logo-text1,
+    .site-header .logo-text2 {
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    .site-header #burger-menu {
+        position: relative;
+        left: -15px;
+        top: 14px;
+        width: 22px;
+        height: auto;
+    }
+
+    .site-header .logo-text1,
+    .site-header .logo-text2 {
+        font-size: 28px;
+        line-height: 1;
+        margin-top: 10px;
+    }
+
+    .site-header .logo-text1 {
+        padding: 10px 8px;
+        border-radius: 8px;
+    }
+
+    .site-header #burger-menu,
+    .site-header .search-icon,
+    .site-header .person-icon,
+    .site-header .cart-icon {
+        width: 22px;
+        height: auto;
+    }
+
+    .site-header .person-region,
+    .site-header .cart-region {
+        margin-top: 8px;
+        width: 22px;
+        height: auto;
+    }
+
+    .site-header .logo {
+        position: relative;
+        left: -10px;
+        top: 4px;
+    }
+
+    .site-header .search-region {
+        display: none;
+    }
+
+    .site-header .right-side {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 32px;
+        position: static !important;
+        gap: 10px;
+    }
+
+    .site-header .left-side {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .site-header .search-region,
+    .site-header .person-region,
+    .site-header .cart-region {
+        margin-top: 0;
+    }
+
+    .site-header .person-region,
+    .site-header .cart-region {
+        cursor: pointer;
+    }
+
+    .side-bar-list,
+    .overlay {
+        display: none;
+    }
+
+    .side-bar-list {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 66.666vw;
+        max-width: 260px;
+        height: 100vh;
+        background: #FFF678;
+        transform: translateX(-100%);
+        transition: transform .3s ease;
+        z-index: 30;
+        flex-direction: column;
+        overflow-y: auto;
+        padding: 40px 20px 20px 20px;
+    }
+
+    .side-bar-list.visible {
+        display: flex !important;
+        transform: translateX(0);
+    }
+
+    /* The overlay layer */
+    .overlay {
+        position: fixed;
+        left: 66.666vw !important;
+        width: 33.334vw !important;
+        right: auto !important;
+        max-width: 130px;
+        height: 100vh;
+        background: rgba(0, 0, 0, .4);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s ease;
+        z-index: 20;
+    }
+
+    .overlay.visible {
+        display: block;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .side-bar-list ul {
+        margin-top: 110px;
+    }
+
+    .side-bar-list li {
+        font-size: 18px;
+        padding: 8px 0 8px 18px;
+    }
+
+    .side-bar-list .icon {
+        font-size: 20px;
+        margin-right: 8px;
+    }
+
+    .back-btn {
+        margin-top: 24px;
+    }
+
+    .back-btn button {
+        font-size: 18px;
+        gap: 6px;
+        padding-left: 18px;
+    }
+
+    .back-btn img {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Checkout page main content */
+    .checkout-wrapper {
+        /* Change from landscape to portrait */
+        flex-direction: column;
+        align-items: center;
+        margin: 20px auto;
+        gap: 20px;
+    }
+
+    /* Unify product card size */
+    .cart-items {
+        width: 100%;
+        padding: 0 6px;
+    }
+
+    .cart-card {
+        flex-direction: row;
+        max-width: 350px;
+        width: 100%;
+        min-height: 170px;
+        padding: 12px;
+        gap: 10px;
+    }
+
+    /* Product image container uniform size */
+    .cart-card .card-img {
+        width: 120px;
+        height: 120px;
+        padding: 4px;
+    }
+
+    .cart-card .card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .cart-card .card-info {
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .card-info .item-title {
+        font-size: 15px;
+        font-family: 'Times New Roman', Times, serif;
+        margin-bottom: 8px;
+    }
+
+    .card-info .item-qty-price {
+        font-size: 14px;
+        margin-bottom: 6px;
+    }
+
+    .card-info .item-sent {
+        font-size: 12px;
+        color: #555;
+    }
+
+    /* Hide the vertical divider */
+    .vertical-divider {
+        display: none;
+    }
+
+    /* The payment area (Total + button) is placed below the card, centered vertically */
+    .payment-section {
+        flex: none;
+        width: 100%;
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .payment-options {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+        margin-left: 30px;
+    }
+
+    .pay-with {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .pay-with .bar {
+        flex: 1;
+        height: 1px;
+        background-color: #000;
+    }
+
+    .pay-with .pay-title {
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    /* Apple Pay button */
+    .apple-pay-btn {
+        width: 100%;
+        max-width: 280px;
+        padding: 12px 0;
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    /* "or" text*/
+    .or-text {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .card-logos {
+        width: 100%;
+        max-width: 280px;
+        padding: 6px 12px;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .card-logos img {
+        height: 32px;
+    }
+
+    .total-row {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        margin-top: 12px;
+    }
+
+    .total-row .total-label {
+        color: #000;
+    }
+
+    .total-row .total-amount {
+        color: #e74c3c;
+    }
+
+    .payment-section .total-row {
+        order: -1;
+        margin-bottom: 20px;
+    }
+
+    #cvv {
+        max-width: 120px;
+        margin: 0 auto 12px;
+    }
+
 }
