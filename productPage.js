@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("cartCount", newCartCount);
       if (cartCountSpan) cartCountSpan.textContent = newCartCount;
 
+      // An animation to hint users added successfully
       addToCartBtn.textContent = "Added ✓";
       setTimeout(() => (addToCartBtn.textContent = "Add to Cart"), 1000);
   });
